@@ -1,0 +1,11 @@
+   1: # Noen tegn er ulovlig i Asp:
+   2: 
+   3: print("A! = A?")  # Alle tegn er lov i tekstliteraler.
+Scanner: name token on line 3: print
+Scanner: ( token on line 3
+Scanner: string literal token on line 3: "A! = A?"
+Scanner: ) token on line 3
+Scanner: NEWLINE token on line 3
+   4: 
+   5: A! = A?   # Men ikke i programkoden.
+Asp scanner error on line 5: This is not a valid token: ! 

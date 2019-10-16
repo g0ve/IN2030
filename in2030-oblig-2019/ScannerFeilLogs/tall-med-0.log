@@ -1,0 +1,12 @@
+   1: # I Asp fÃ¥r tall ikke lov Ã¥ starte med sifferet 0, men
+   2: # selve tallet 0 er selvfÃ¸lgelig et unntak.
+   3: # (I Python 2 er det anderledes; da brukes innledende 0-siffer
+   4: # til Ã¥ angi at tallet er pÃ¥ oktal form.)
+   5: 
+   6: a = 0   # Dette er helt OK.
+Scanner: name token on line 6: a
+Scanner: = token on line 6
+Scanner: integer literal token on line 6: 0
+Scanner: NEWLINE token on line 6
+   7: a = 04  # Men ikke dette. I Asp er dette to tall: 0 og 4!
+Asp scanner error on line 7: Not a valid int/long number: 04
