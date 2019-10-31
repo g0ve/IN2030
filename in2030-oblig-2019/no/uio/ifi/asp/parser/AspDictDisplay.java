@@ -1,6 +1,7 @@
 package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.runtime.*;
@@ -74,6 +75,15 @@ public class AspDictDisplay extends AspAtom {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
-		return null;
+		HashMap<String, RuntimeValue> dict = new HashMap<>();
+		int strLstLenght = aslLst.size();
+
+		for (int i = 0; i < strLstLenght; i++) {
+			AspStringLit asl = aslLst.get(i);
+			AspExpr ae = aeLst.get(i);
+
+			dict.put(asl.eval(curScope).toString(), ae.eval(curScope))
+		}
+		return RuntimeDictValue(dict);
 	}
 }
