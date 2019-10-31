@@ -1296,7 +1296,7 @@ def w4 (n):
     return "  " + str(n)
   elif n <= 999: 
     return " " + str(n)
-  else : 
+  else: 
     return str(n)
 def list_primes ():
   n_printed = 0
