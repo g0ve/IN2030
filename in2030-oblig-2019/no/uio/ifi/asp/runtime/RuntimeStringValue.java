@@ -24,7 +24,7 @@ public class RuntimeStringValue extends RuntimeValue {
 
 	@Override
 	protected String typeName() {
-		return "String";
+		return "string";
 	}
 
 	@Override
@@ -51,39 +51,104 @@ public class RuntimeStringValue extends RuntimeValue {
 
 	@Override
 	public RuntimeValue evalLen(AspSyntax where){
-		return new RuntimeIntValue(dict.size());
+		return new RuntimeIntValue(str.lenght());
 	}
 
 	@Override
-	public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
-		if (v instanceof RuntimeStringValue) {
-			if(dict.get(v.toString()) != null){
-				return dict.get(v.toString());
-			}
-			runtimeError("Key not found in dictionary.", where);
+	public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where){
+		if(v instanceof RuntimeStringValue){
+			return new RuntimeStringValue(str + v);
 		}
+
+		runtimeError("Type error for +", where);
+		return null;
+	}
+
+	@Override
+	public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where){
 		if (v instanceof RuntimeIntValue) {
-			if(dict.get(v.toString()) != null){
-				return dict.get(v.toString());
+			long count = v.getIntValue("*", where);
+			String tmp = "";
+
+			for (long i = 0; i < count; ) {
+				tmp = tmp + str;
 			}
-			runtimeError("Key not found in dictionary.", where);
+			return new RuntimeStringValue(tmp);
 		}
-		if (v instanceof RuntimeFloatValue) {
-			if(dict.get(v.toString()) != null){
-				return dict.get(v.toString());
-			}
-			runtimeError("Key not found in dictionary.", where);
-		}
-		runtimeError("Type error for dictionary key.", where);
-		return null;  // Required by the compiler
+
+		runtimeError("Type error for *", where);
+		return null;
 	}
 
-	public void evalAssignElem(RuntimeValue i, RuntimeValue value, AspSyntax where) {
-		if(i instanceof RuntimeIntValue){
-			int i = (int)((RuntimeIntValue)i).intValue;
-			dict.put(i, value);
+	@Override
+	public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where){
+		if (v instanceof RuntimeStringValue) {
+			String str2 = v.getStringValue("==", where);
+
+			return new RuntimeBoolValue(str.equals(str2));
 		}
-		runtimeError("Type error for dictionary key.", where);
+
+		runtimeError("Type error for ==", where);
+		return null;
 	}
 
+	@Override
+	public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where){
+		if (v instanceof RuntimeStringValue) {
+			String str2 = v.getStringValue("!=", where);
+
+			return new RuntimeBoolValue(!str.equals(str2));
+		}
+
+		runtimeError("Type error for !=", where);
+		return null;
+	}
+
+	@Override
+	public RuntimeValue evalGreater(RuntimeValue v, AspSyntax where){
+		if (v instanceof RuntimeStringValue) {
+			String str2 = v.getStringValue(">", where);
+
+			return new RuntimeBoolValue(str.lenght() > str2.lenght());
+		}
+
+		runtimeError("Type error for >", where);
+		return null;
+	}
+
+	@Override
+	public RuntimeValue evalGreaterEqual(RuntimeValue v, AspSyntax where){
+		if (v instanceof RuntimeStringValue) {
+			String str2 = v.getStringValue(">=", where);
+
+			return new RuntimeBoolValue(str.lenght() >= str2.lenght());
+		}
+
+		runtimeError("Type error for >=", where);
+		return null;
+	}
+
+	@Override
+	public RuntimeValue evalLess(RuntimeValue v, AspSyntax where){
+		if (v instanceof RuntimeStringValue) {
+			String str2 = v.getStringValue("<", where);
+
+			return new RuntimeBoolValue(str.lenght() < str2.lenght());
+		}
+
+		runtimeError("Type error for <", where);
+		return null;
+	}
+
+	@Override
+	public RuntimeValue evalLessEqual(RuntimeValue v, AspSyntax where){
+		if (v instanceof RuntimeStringValue) {
+			String str2 = v.getStringValue("<=", where);
+
+			return new RuntimeBoolValue(str.lenght() <= str2.lenght());
+		}
+
+		runtimeError("Type error for <=", where);
+		return null;
+	}
 }
