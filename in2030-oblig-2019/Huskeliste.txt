@@ -9,3 +9,5 @@ AspNotTest: done
 AspComparison: done
 AspTerm: done
 AspFactor: done
+RuntimeIntValue: trenger evalModulo
+RuntimeFloatValue: trenger evalModulo

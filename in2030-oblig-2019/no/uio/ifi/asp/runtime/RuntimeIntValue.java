@@ -21,6 +21,23 @@ public class RuntimeIntValue extends RuntimeValue{
   }
 
   @Override
+  public boolean getIntPositive(String what, AspSyntax where) {
+    return new RuntimeIntValue(+integer);
+  }
+  @Override
+  public boolean getIntNegate(String what, AspSyntax where) {
+    return new RuntimeIntValue(-integer);
+  }
+
+  @Override
+  public int getBoolValue(String what, AspSyntax where) {
+    if (integer != 0){
+      return true;
+    }
+    return false;
+  }
+
+  @Override
   public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
       return new RuntimeBoolValue(integer == v.getIntValue("== operand", where));
@@ -155,15 +172,5 @@ public class RuntimeIntValue extends RuntimeValue{
     return null;  // Required by the compiler
   }
 
-  @Override
-  public RuntimeValue evalModulo(RuntimeValue v, AspSyntax where) {
-    if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(integer % v.getIntValue("/ operand", where));
-    }
-    else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(integer /  v.getFloatValue("/ operand", where));
-    }
-    runtimeError("Type error for /.", where);
-    return null;  // Required by the compiler
-  }
+
 }
