@@ -8,3 +8,4 @@ AspAndTest: done (fra kompendiet)
 AspNotTest: done
 AspComparison: done
 AspTerm: done
+AspFactor: done
