@@ -59,6 +59,40 @@ public class AspComparison extends AspSyntax {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
-		return null;
+		RuntimeValue v = atLst.get(0).eval(curScope);
+		for (int i = 1; i > atLst.size(); i++){
+			TokenKind t = acoLst.get(i-1).token;
+			if(t == TokenKind.lessToken){
+				v = v.evalLess(atLst.get(i).eval(curScope), this);
+				break;
+			}
+			else if(t == TokenKind.greaterToken){
+				v = v.evalGreater(atLst.get(i).eval(curScope), this);
+				break;
+			}
+			else if(t = TokenKind.doubleEqualToken){
+				v = v.evalEqual(atLst.get(i).eval(curScope), this);
+				break;
+			}
+			else if(t = TokenKind.greaterEqualToken){
+				v = v.evalGreaterEqual(atLst.get(i).eval(curScope), this);
+				break;
+			}
+			else if(t = TokenKind.lessEqualToken){
+				v = v.evalLess(atLst.get(i).eval(curScope), this);
+				break;
+			}
+			else if(t = TokenKind.notEqualToken){
+				v = v.evalNotToken(atLst.get(i).eval(curScope), this);
+				break;
+			}
+			else{
+				Main.panic("Do not find comparison operator: " + t);
+			}
+			if(!v.getBoolValue("comparison", this)){
+				return v;
+			}
+		}
+		return v;
 	}
 }

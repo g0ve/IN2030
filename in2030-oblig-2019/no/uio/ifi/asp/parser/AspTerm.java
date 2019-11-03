@@ -59,6 +59,21 @@ public class AspTerm extends AspSyntax {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
-		return null;
+		RuntimeValue v = afLst.get(0).eval(curScope);
+		for (int i = 1; i < afLst.size(); i++){
+			TokenKind t = atoLst.get(i-1).token;
+			if(t == TokenKind.minusToken){
+			v = v.evalSubtract(afLst.get(i).eval(curScope), this);
+			break;
+			}
+			else if (t == TokenKind.plusToken){
+				v = v.evalAdd(afLst.get(i).eval(curScope), this);
+				break;
+			}
+			else{
+				Main.panic("Do not find term: " + t)
+			}
+		}
+		return v;
 	}
 }

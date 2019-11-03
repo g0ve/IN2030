@@ -68,10 +68,50 @@ public class AspFactor extends AspSyntax {
 		}
 	}
 
-
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
-		return null;
+		RuntimeValue v = null;
+		if(!afpLst.isEmpty()){
+			TokenKind t = afpLst.get(0).token;
+			if(t == TokenKind.minusToken){
+				v = apLst.get(0).eval(curScope).evalNegate(this);
+				break;
+			}
+			else if(t == TokenKind.plusToken){
+				v = apLst.get(0).eval(curScope).evalPositiv(this);
+			}
+			else{
+				Main.panic("Do not understand: " + t);
+			}
+		}
+		else{
+			v = apLst.get(0).eval(curScope);
+		}
+		if(!afoLst.isEmpty()){
+			for (int i = 1; i < apLst.size(); i++){
+				TokenKind to = afoLst.get(i-1).token;
+				if(to == TokenKind.slashToken){
+					v = v.evalDivide(apLst.get(i).eval(curScope), this);
+					break;
+				}
+				else if(to == TokenKind.doubleSlashToken){
+					v = v.evalIntDivide(apLst.get(i).eval(curScope), this);
+					break;
+				}
+				else if(to == TokenKind.astToken){
+					v = v.evalMultiply(apLst.get(i).eval(curScope), this);
+					break;
+				}
+				else if(to == TokenKind.percentToken){
+					v = v.evalModulo(apLst.get(i).eval(curScope), this);
+					break;
+				}
+				else{
+					Main.panic("Do not understand: " + to)
+				}
+			}
+		}
+		return v;
 	}
 }

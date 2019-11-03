@@ -3,4 +3,8 @@ AspStmt: abstract
 AspSmallStmtList:
 AspAssignment: done
 AspExpr: done
-AspReturn: skjekk at den skal endres i part 3 og ikke part 4
+AspReturn: skjekk at den skal endres i part 3 og ikke part 4 (tror det er part 4 så må nok fjerne)
+AspAndTest: done (fra kompendiet)
+AspNotTest: done
+AspComparison: done
+AspTerm: done
