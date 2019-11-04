@@ -72,7 +72,7 @@ public class AspFactor extends AspSyntax {
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
 		RuntimeValue v = null;
-		if(!afpLst.isEmpty()){
+		if(afpLst.get(0) != null){
 			TokenKind t = afpLst.get(0).token.kind;
 			if(t == TokenKind.minusToken){
 				v = apLst.get(0).eval(curScope).evalNegate(this);

@@ -16,6 +16,16 @@ public class RuntimeIntValue extends RuntimeValue{
   }
 
   @Override
+  public String toString(){
+    return "" +integer;
+  }
+
+  @Override
+  public String showInfo(){
+    return toString();
+  }
+
+  @Override
   public long getIntValue(String what, AspSyntax where) {
     return integer;
   }
@@ -27,6 +37,16 @@ public class RuntimeIntValue extends RuntimeValue{
       return true;
     }
     return false;
+  }
+
+  @Override
+  public RuntimeValue evalNegate(AspSyntax where){
+    return new RuntimeIntValue(-integer);
+  }
+
+  @Override
+  public RuntimeValue evalPositive(AspSyntax where){
+    return new RuntimeIntValue(+integer);
   }
 
   @Override

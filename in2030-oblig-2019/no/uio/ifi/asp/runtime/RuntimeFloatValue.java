@@ -16,8 +16,28 @@ public class RuntimeFloatValue extends RuntimeValue{
   }
 
   @Override
+  public String toString(){
+    return "" +f;
+  }
+
+  @Override
+  public String showInfo(){
+    return toString();
+  }
+
+  @Override
   public double getFloatValue(String what, AspSyntax where) {
     return f;
+  }
+
+  @Override
+  public RuntimeValue evalNegate(AspSyntax where){
+    return new RuntimeFloatValue(-f);
+  }
+
+  @Override
+  public RuntimeValue evalPositive(AspSyntax where){
+    return new RuntimeFloatValue(+f);
   }
 
   @Override
