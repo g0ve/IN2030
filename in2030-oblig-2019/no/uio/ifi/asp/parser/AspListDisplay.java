@@ -66,6 +66,12 @@ public class AspListDisplay extends AspAtom {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
-		return null;
+		ArrayList<RuntimeValue> lst = new ArrayList<>();
+
+		for (AspExpr ae : aeLst) {
+			lst.add(ae.eval(curScope));
+		}
+
+		return RuntimeListValue(lst);
 	}
 }
