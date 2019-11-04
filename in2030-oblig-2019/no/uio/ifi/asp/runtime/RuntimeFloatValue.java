@@ -171,17 +171,21 @@ public class RuntimeFloatValue extends RuntimeValue{
     return null;  // Required by the compiler
   }
 
-  @Override
   public RuntimeValue evalIntDivide(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeFloatValue(Math.floor(f / v.getIntValue("// operand", where)));
+      //return new RuntimeFloatValue(Math.floor(integer / v.getIntValue("// operand", where)));
+      return new RuntimeFloatValue(f / v.getIntValue("// operand", where));
+
     }
     else if(v instanceof RuntimeFloatValue){
-      return new RuntimeFloatValue(Math.floor(f / v.getFloatValue("// operand", where)));
+      //return new RuntimeFloatValue(Math.floor(integer / v.getFloatValue("// operand", where)));
+      return new RuntimeFloatValue(f / v.getFloatValue("// operand", where));
+
     }
-    runtimeError("Type error for -.", where);
+    runtimeError("Type error for //.", where);
     return null;  // Required by the compiler
   }
+
 
   @Override
   public RuntimeValue evalModulo(RuntimeValue v, AspSyntax where) {

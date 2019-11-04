@@ -7,7 +7,7 @@ Trace line 3: -1017
  - 2 + 5 * 7 ==>
 Trace line 4: 33
 8 // 2 * (2 + 2) ==>
-Trace line 5: 4.0
+Trace line 5: 16.0
 "Testing float expressions:" ==>
 Trace line 7: 'Testing float expressions:'
 42.0 ==>

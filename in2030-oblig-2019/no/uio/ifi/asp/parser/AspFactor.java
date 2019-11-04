@@ -92,19 +92,15 @@ public class AspFactor extends AspSyntax {
 				TokenKind to = afoLst.get(i-1).token.kind;
 				if(to == TokenKind.slashToken){
 					v = v.evalDivide(apLst.get(i).eval(curScope), this);
-					break;
 				}
 				else if(to == TokenKind.doubleSlashToken){
 					v = v.evalIntDivide(apLst.get(i).eval(curScope), this);
-					break;
 				}
 				else if(to == TokenKind.astToken){
 					v = v.evalMultiply(apLst.get(i).eval(curScope), this);
-					break;
 				}
 				else if(to == TokenKind.percentToken){
 					v = v.evalModulo(apLst.get(i).eval(curScope), this);
-					break;
 				}
 				else{
 					Main.panic("Do not understand: " + to);
