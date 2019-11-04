@@ -31,13 +31,10 @@ public class RuntimeStringValue extends RuntimeValue {
     public String showInfo(){
         if (str.charAt(0) == '\"') {
         	return "\"" + str + "\"";
-        }
-
-		if (str.charAt(0) == '\'') {
+        }else {
 			return "\'" + str + "\'";
 		}
 
-		return "";
     }
 
 	@Override
