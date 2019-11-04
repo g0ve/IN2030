@@ -27,8 +27,8 @@ False or True or 144 or "?"
 
 "Testing lists"
 []
-[-1,0,1]*(2)
-[101,102,103][1]
+[-1, 0, 1]*(2)
+[101, 102, 103][1]
 
 "Testing dictionaries"
 {"A": "a", "B": 1+2}

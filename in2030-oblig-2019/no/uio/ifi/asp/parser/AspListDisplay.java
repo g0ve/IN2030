@@ -38,8 +38,8 @@ public class AspListDisplay extends AspAtom {
 
 		skip(s, TokenKind.rightBracketToken);
 
-		if(cntComma + 1 != ald.aeLst.size()){
-			parserError("Too many commas, not allowed" + cntComma +" "+ald.aeLst.size(), s.curLineNum());
+		if(cntComma + 1 != ald.aeLst.size() && !ald.aeLst.isEmpty()){
+			parserError("Too many commas, not allowed " + cntComma +" "+ald.aeLst.size(), s.curLineNum());
 		}
 
 		leaveParser("list display");
