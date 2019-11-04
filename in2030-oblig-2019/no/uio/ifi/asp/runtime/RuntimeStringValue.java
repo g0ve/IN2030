@@ -11,7 +11,7 @@ public class RuntimeStringValue extends RuntimeValue {
 	String str;
 	boolean boolValue;
 
-	public RuntimeStringValue(HashMap<String, RuntimeValue> v) {
+	public RuntimeStringValue(String v) {
 		str = v;
 
 		if(str.equals("")){
@@ -51,11 +51,11 @@ public class RuntimeStringValue extends RuntimeValue {
 
 	@Override
 	public RuntimeValue evalLen(AspSyntax where){
-		return new RuntimeIntValue(str.lenght());
+		return new RuntimeIntValue(str.length());
 	}
 
 	@Override
-	public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where){
+	public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where){
 		if(v instanceof RuntimeStringValue){
 			return new RuntimeStringValue(str + v);
 		}
@@ -109,7 +109,7 @@ public class RuntimeStringValue extends RuntimeValue {
 		if (v instanceof RuntimeStringValue) {
 			String str2 = v.getStringValue(">", where);
 
-			return new RuntimeBoolValue(str.lenght() > str2.lenght());
+			return new RuntimeBoolValue(str.length() > str2.length());
 		}
 
 		runtimeError("Type error for >", where);
@@ -121,7 +121,7 @@ public class RuntimeStringValue extends RuntimeValue {
 		if (v instanceof RuntimeStringValue) {
 			String str2 = v.getStringValue(">=", where);
 
-			return new RuntimeBoolValue(str.lenght() >= str2.lenght());
+			return new RuntimeBoolValue(str.length() >= str2.length());
 		}
 
 		runtimeError("Type error for >=", where);
@@ -133,7 +133,7 @@ public class RuntimeStringValue extends RuntimeValue {
 		if (v instanceof RuntimeStringValue) {
 			String str2 = v.getStringValue("<", where);
 
-			return new RuntimeBoolValue(str.lenght() < str2.lenght());
+			return new RuntimeBoolValue(str.length() < str2.length());
 		}
 
 		runtimeError("Type error for <", where);
@@ -145,7 +145,7 @@ public class RuntimeStringValue extends RuntimeValue {
 		if (v instanceof RuntimeStringValue) {
 			String str2 = v.getStringValue("<=", where);
 
-			return new RuntimeBoolValue(str.lenght() <= str2.lenght());
+			return new RuntimeBoolValue(str.length() <= str2.length());
 		}
 
 		runtimeError("Type error for <=", where);

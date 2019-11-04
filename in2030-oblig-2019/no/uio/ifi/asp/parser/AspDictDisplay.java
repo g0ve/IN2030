@@ -82,8 +82,8 @@ public class AspDictDisplay extends AspAtom {
 			AspStringLit asl = aslLst.get(i);
 			AspExpr ae = aeLst.get(i);
 
-			dict.put(asl.eval(curScope).toString(), ae.eval(curScope))
+			dict.put(asl.eval(curScope).toString(), ae.eval(curScope));
 		}
-		return RuntimeDictValue(dict);
+		return new RuntimeDictValue(dict);
 	}
 }

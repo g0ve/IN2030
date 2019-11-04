@@ -3,15 +3,15 @@ package no.uio.ifi.asp.runtime;
 import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.parser.AspSyntax;
 
-import java.util.Arraylist;
+import java.util.ArrayList;
 
 
 public class RuntimeListValue extends RuntimeValue {
 
-    Arraylist<RuntimeValue> lst = new Arraylist<>();
+    ArrayList<RuntimeValue> lst = new ArrayList<>();
 	boolean boolValue;
 
-	public RuntimeListValue(Arraylist<RuntimeValue> v) {
+	public RuntimeListValue(ArrayList<RuntimeValue> v) {
 		lst = v;
 
 		if(lst.isEmpty()){
@@ -45,7 +45,7 @@ public class RuntimeListValue extends RuntimeValue {
 
 	@Override
 	public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where){
-		Arraylist<RuntimeValue> tmpLst = new Arraylist<>();
+		ArrayList<RuntimeValue> tmpLst = new ArrayList<>();
 
 		if (v instanceof RuntimeIntValue) {
 			int teller = 0;
