@@ -64,27 +64,21 @@ public class AspComparison extends AspSyntax {
 			TokenKind t = acoLst.get(i-1).token.kind;
 			if(t == TokenKind.lessToken){
 				v = v.evalLess(atLst.get(i).eval(curScope), this);
-				break;
 			}
 			else if(t == TokenKind.greaterToken){
 				v = v.evalGreater(atLst.get(i).eval(curScope), this);
-				break;
 			}
 			else if(t == TokenKind.doubleEqualToken){
 				v = v.evalEqual(atLst.get(i).eval(curScope), this);
-				break;
 			}
 			else if(t == TokenKind.greaterEqualToken){
 				v = v.evalGreaterEqual(atLst.get(i).eval(curScope), this);
-				break;
 			}
 			else if(t == TokenKind.lessEqualToken){
 				v = v.evalLess(atLst.get(i).eval(curScope), this);
-				break;
 			}
 			else if(t == TokenKind.notEqualToken){
 				v = v.evalNotEqual(atLst.get(i).eval(curScope), this);
-				break;
 			}
 			else{
 				Main.panic("Do not find comparison operator: " + t);
