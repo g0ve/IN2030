@@ -3,10 +3,10 @@ package no.uio.ifi.asp.runtime;
 import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.parser.AspSyntax;
 
-public class RuntimeIntValue extends RuntimeValue{
+public class RuntimeFloatValue extends RuntimeValue{
   double f;
 
-  public RuntimeIntValue(int i){
+  public RuntimeFloatValue(double i){
     f = i;
   }
 
@@ -16,21 +16,12 @@ public class RuntimeIntValue extends RuntimeValue{
   }
 
   @Override
-  public boolean getFloatValue(String what, AspSyntax where) {
+  public double getFloatValue(String what, AspSyntax where) {
     return f;
   }
 
   @Override
-  public boolean getFloatPositive(String what, AspSyntax where) {
-    return new RuntimeIntValue(+f);
-  }
-  @Override
-  public boolean getFloatNegate(String what, AspSyntax where) {
-    return new RuntimeIntValue(-f);
-  }
-
-  @Override
-  public int getBoolValue(String what, AspSyntax where) {
+  public boolean getBoolValue(String what, AspSyntax where) {
     if (f != 0.0){
       return true;
     }
@@ -115,7 +106,7 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeIntValue(f + v.getIntValue("+ operand", where));
+      return new RuntimeFloatValue(f + v.getIntValue("+ operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
       return new RuntimeFloatValue(f +  v.getFloatValue("+ operand", where));
@@ -127,7 +118,7 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalSubtract(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeIntValue(f - v.getIntValue("- operand", where));
+      return new RuntimeFloatValue(f - v.getIntValue("- operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
       return new RuntimeFloatValue(f -  v.getFloatValue("- operand", where));
@@ -139,7 +130,7 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeIntValue(f * v.getIntValue("* operand", where));
+      return new RuntimeFloatValue(f * v.getIntValue("* operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
       return new RuntimeFloatValue(f * v.getFloatValue("* operand", where));
@@ -151,7 +142,7 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalDivide(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeIntValue(f / v.getIntValue("/ operand", where));
+      return new RuntimeFloatValue(f / v.getIntValue("/ operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
       return new RuntimeFloatValue(f /  v.getFloatValue("/ operand", where));
@@ -163,7 +154,7 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalIntDivide(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeIntValue(Math.floor(f / v.getIntValue("// operand", where)));
+      return new RuntimeFloatValue(Math.floor(f / v.getIntValue("// operand", where)));
     }
     else if(v instanceof RuntimeFloatValue){
       return new RuntimeFloatValue(Math.floor(f / v.getFloatValue("// operand", where)));
@@ -175,7 +166,8 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalModulo(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeIntValue(Math.floorMod(f, v.getIntValue("% operand", where)));
+      long i = v.getIntValue("% operand", where);
+      return new RuntimeFloatValue(f - i * Math.floor(f/i));
     }
     else if(v instanceof RuntimeFloatValue){
       double float_value = v.getFloatValue("% operand", where);

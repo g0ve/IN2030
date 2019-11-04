@@ -4,9 +4,9 @@ import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.parser.AspSyntax;
 
 public class RuntimeIntValue extends RuntimeValue{
-  int integer;
+  long integer;
 
-  public RuntimeIntValue(int i){
+  public RuntimeIntValue(long i){
     integer = i;
   }
 
@@ -16,21 +16,13 @@ public class RuntimeIntValue extends RuntimeValue{
   }
 
   @Override
-  public boolean getIntValue(String what, AspSyntax where) {
+  public long getIntValue(String what, AspSyntax where) {
     return integer;
   }
 
-  @Override
-  public boolean getIntPositive(String what, AspSyntax where) {
-    return new RuntimeIntValue(+integer);
-  }
-  @Override
-  public boolean getIntNegate(String what, AspSyntax where) {
-    return new RuntimeIntValue(-integer);
-  }
 
   @Override
-  public int getBoolValue(String what, AspSyntax where) {
+  public boolean getBoolValue(String what, AspSyntax where) {
     if (integer != 0){
       return true;
     }
@@ -163,7 +155,7 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalIntDivide(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeIntValue(Math.floor(integer / v.getIntValue("// operand", where)));
+      return new RuntimeFloatValue(Math.floor(integer / v.getIntValue("// operand", where)));
     }
     else if(v instanceof RuntimeFloatValue){
       return new RuntimeFloatValue(Math.floor(integer / v.getFloatValue("// operand", where)));

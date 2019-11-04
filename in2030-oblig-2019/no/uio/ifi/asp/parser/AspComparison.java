@@ -61,7 +61,7 @@ public class AspComparison extends AspSyntax {
 		//-- Must be changed in part 3:
 		RuntimeValue v = atLst.get(0).eval(curScope);
 		for (int i = 1; i > atLst.size(); i++){
-			TokenKind t = acoLst.get(i-1).token;
+			TokenKind t = acoLst.get(i-1).token.kind;
 			if(t == TokenKind.lessToken){
 				v = v.evalLess(atLst.get(i).eval(curScope), this);
 				break;
@@ -70,20 +70,20 @@ public class AspComparison extends AspSyntax {
 				v = v.evalGreater(atLst.get(i).eval(curScope), this);
 				break;
 			}
-			else if(t = TokenKind.doubleEqualToken){
+			else if(t == TokenKind.doubleEqualToken){
 				v = v.evalEqual(atLst.get(i).eval(curScope), this);
 				break;
 			}
-			else if(t = TokenKind.greaterEqualToken){
+			else if(t == TokenKind.greaterEqualToken){
 				v = v.evalGreaterEqual(atLst.get(i).eval(curScope), this);
 				break;
 			}
-			else if(t = TokenKind.lessEqualToken){
+			else if(t == TokenKind.lessEqualToken){
 				v = v.evalLess(atLst.get(i).eval(curScope), this);
 				break;
 			}
-			else if(t = TokenKind.notEqualToken){
-				v = v.evalNotToken(atLst.get(i).eval(curScope), this);
+			else if(t == TokenKind.notEqualToken){
+				v = v.evalNotEqual(atLst.get(i).eval(curScope), this);
 				break;
 			}
 			else{

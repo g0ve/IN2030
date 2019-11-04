@@ -73,13 +73,12 @@ public class AspFactor extends AspSyntax {
 		//-- Must be changed in part 3:
 		RuntimeValue v = null;
 		if(!afpLst.isEmpty()){
-			TokenKind t = afpLst.get(0).token;
+			TokenKind t = afpLst.get(0).token.kind;
 			if(t == TokenKind.minusToken){
 				v = apLst.get(0).eval(curScope).evalNegate(this);
-				break;
 			}
 			else if(t == TokenKind.plusToken){
-				v = apLst.get(0).eval(curScope).evalPositiv(this);
+				v = apLst.get(0).eval(curScope).evalPositive(this);
 			}
 			else{
 				Main.panic("Do not understand: " + t);
@@ -90,7 +89,7 @@ public class AspFactor extends AspSyntax {
 		}
 		if(!afoLst.isEmpty()){
 			for (int i = 1; i < apLst.size(); i++){
-				TokenKind to = afoLst.get(i-1).token;
+				TokenKind to = afoLst.get(i-1).token.kind;
 				if(to == TokenKind.slashToken){
 					v = v.evalDivide(apLst.get(i).eval(curScope), this);
 					break;
@@ -108,7 +107,7 @@ public class AspFactor extends AspSyntax {
 					break;
 				}
 				else{
-					Main.panic("Do not understand: " + to)
+					Main.panic("Do not understand: " + to);
 				}
 			}
 		}

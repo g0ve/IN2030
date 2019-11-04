@@ -61,7 +61,7 @@ public class AspTerm extends AspSyntax {
 		//-- Must be changed in part 3:
 		RuntimeValue v = afLst.get(0).eval(curScope);
 		for (int i = 1; i < afLst.size(); i++){
-			TokenKind t = atoLst.get(i-1).token;
+			TokenKind t = atoLst.get(i-1).token.kind;
 			if(t == TokenKind.minusToken){
 			v = v.evalSubtract(afLst.get(i).eval(curScope), this);
 			break;
@@ -71,7 +71,7 @@ public class AspTerm extends AspSyntax {
 				break;
 			}
 			else{
-				Main.panic("Do not find term: " + t)
+				Main.panic("Do not find term: " + t);
 			}
 		}
 		return v;
