@@ -21,7 +21,7 @@ public class AspFloatLit extends AspAtom {
 
 		AspFloatLit afl = new AspFloatLit(s.curLineNum());
 
-		if(s.curToken().kind != TokenKind.integerToken){
+		if(s.curToken().kind != TokenKind.floatToken){
 			parserError("Expected a FLOAT but found a " + s.curToken().kind, s.curLineNum());
 		}
 
