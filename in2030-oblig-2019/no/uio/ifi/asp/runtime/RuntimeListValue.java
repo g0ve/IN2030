@@ -46,7 +46,6 @@ public class RuntimeListValue extends RuntimeValue {
 	@Override
 	public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where){
 		ArrayList<RuntimeValue> tmpLst = new ArrayList<>();
-
 		if (v instanceof RuntimeIntValue) {
 			int teller = 0;
 			long times = v.getIntValue("*", where);
@@ -73,10 +72,11 @@ public class RuntimeListValue extends RuntimeValue {
 			return lst.get(i);
 		}
 
-		runtimeError("Type error for list key.", where);
+        runtimeError("Subscription '[...]' undefined for "+typeName()+"!", where);
 		return null;  // Required by the compiler
 	}
 
+    @Override
 	public void evalAssignElem(RuntimeValue inx, RuntimeValue value, AspSyntax where) {
 		if(inx instanceof RuntimeIntValue){
 			int i = (int)((RuntimeIntValue)inx).integer;
