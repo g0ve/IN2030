@@ -115,10 +115,10 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(integer + v.getIntValue("+ operand", where));
+      return new RuntimeIntValue(integer + v.getIntValue("+ operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(integer +  v.getFloatValue("+ operand", where));
+      return new RuntimeFloatValue(integer +  v.getFloatValue("+ operand", where));
     }
     runtimeError("Type error for +.", where);
     return null;  // Required by the compiler
@@ -127,10 +127,10 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalSubtract(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(integer - v.getIntValue("- operand", where));
+      return new RuntimeIntValue(integer - v.getIntValue("- operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(integer -  v.getFloatValue("- operand", where));
+      return new RuntimeFloatValue(integer -  v.getFloatValue("- operand", where));
     }
     runtimeError("Type error for -.", where);
     return null;  // Required by the compiler
@@ -139,10 +139,10 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(integer * v.getIntValue("* operand", where));
+      return new RuntimeIntValue(integer * v.getIntValue("* operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(integer * v.getFloatValue("* operand", where));
+      return new RuntimeFloatValue(integer * v.getFloatValue("* operand", where));
     }
     runtimeError("Type error for *.", where);
     return null;  // Required by the compiler
@@ -151,10 +151,10 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalDivide(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(integer / v.getIntValue("/ operand", where));
+      return new RuntimeIntValue(integer / v.getIntValue("/ operand", where));
     }
     else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(integer /  v.getFloatValue("/ operand", where));
+      return new RuntimeFloatValue(integer /  v.getFloatValue("/ operand", where));
     }
     runtimeError("Type error for /.", where);
     return null;  // Required by the compiler
@@ -163,12 +163,25 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalIntDivide(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(Math.floor(integer / v.getIntValue("// operand", where)));
+      return new RuntimeIntValue(Math.floor(integer / v.getIntValue("// operand", where)));
     }
     else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(Math.floor(integer / v.getFloatValue("// operand", where)));
+      return new RuntimeFloatValue(Math.floor(integer / v.getFloatValue("// operand", where)));
     }
     runtimeError("Type error for -.", where);
+    return null;  // Required by the compiler
+  }
+
+  @Override
+  public RuntimeValue evalModulo(RuntimeValue v, AspSyntax where) {
+    if (v instanceof RuntimeIntValue) {
+      return new RuntimeIntValue(Math.floorMod(integer, v.getIntValue("% operand", where)));
+    }
+    else if(v instanceof RuntimeFloatValue){
+      double float_value = v.getFloatValue("% operand", where);
+      return new RuntimeFloatValue(integer - float_value * Math.floor(integer/float_value));
+    }
+    runtimeError("Type error for %.", where);
     return null;  // Required by the compiler
   }
 
