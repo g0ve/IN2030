@@ -72,10 +72,11 @@ public class RuntimeDictValue extends RuntimeValue {
 		return null;  // Required by the compiler
 	}
 
-	public void evalAssignElem(RuntimeValue i, RuntimeValue value, AspSyntax where) {
-		if(i instanceof RuntimeIntValue){
-			int i = (int)((RuntimeIntValue)i).intValue;
-			dict.put(i, value);
+    @Override
+	public void evalAssignElem(RuntimeValue inx, RuntimeValue value, AspSyntax where) {
+		if(inx instanceof RuntimeIntValue){
+			String key = inx.getStringValue("assign elem dict", where);
+			dict.put(key, value);
 		}
 		runtimeError("Type error for dictionary key.", where);
 	}

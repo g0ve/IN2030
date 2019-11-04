@@ -36,6 +36,8 @@ public class RuntimeStringValue extends RuntimeValue {
 		if (str.charAt(0) == '\'') {
 			return "\'" + str + "\'";
 		}
+		
+		return "";
     }
 
 	@Override

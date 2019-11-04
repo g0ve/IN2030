@@ -72,6 +72,6 @@ public class AspListDisplay extends AspAtom {
 			lst.add(ae.eval(curScope));
 		}
 
-		return RuntimeListValue(lst);
+		return new RuntimeListValue(lst);
 	}
 }

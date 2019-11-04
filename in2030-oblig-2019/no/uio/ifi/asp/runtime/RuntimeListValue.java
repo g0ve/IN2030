@@ -54,7 +54,7 @@ public class RuntimeListValue extends RuntimeValue {
 				tmpLst.addAll(lst);
 				teller++;
 			}
-			return new RuntimeListValue(tmp);
+			return new RuntimeListValue(tmpLst);
 		}
 		runtimeError("Type error for *.", where);
 		return null;  // Required by the compiler
@@ -69,7 +69,7 @@ public class RuntimeListValue extends RuntimeValue {
 	public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
 
 		if (v instanceof RuntimeIntValue) {
-			long i = v.getIntValue("sub", where);
+			int i = (int)v.getIntValue("sub", where);
 			return lst.get(i);
 		}
 
@@ -77,13 +77,12 @@ public class RuntimeListValue extends RuntimeValue {
 		return null;  // Required by the compiler
 	}
 
-	public void evalAssignElem(RuntimeValue i, RuntimeValue value, AspSyntax where) {
-		if(i instanceof RuntimeIntValue){
-			int i = (int)((RuntimeIntValue)i).intValue;
+	public void evalAssignElem(RuntimeValue inx, RuntimeValue value, AspSyntax where) {
+		if(inx instanceof RuntimeIntValue){
+			int i = (int)((RuntimeIntValue)inx).integer;
 			lst.set(i, value);
 		}
 		runtimeError("Type error for list key.", where);
-		return null;  // Required by the compiler
 	}
 
 }
