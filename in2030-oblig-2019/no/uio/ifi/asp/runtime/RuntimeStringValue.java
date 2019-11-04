@@ -36,7 +36,7 @@ public class RuntimeStringValue extends RuntimeValue {
 		if (str.charAt(0) == '\'') {
 			return "\'" + str + "\'";
 		}
-		
+
 		return "";
     }
 
@@ -72,7 +72,7 @@ public class RuntimeStringValue extends RuntimeValue {
 			long count = v.getIntValue("*", where);
 			String tmp = "";
 
-			for (long i = 0; i < count; ) {
+			for (long i = 0; i < count; i++) {
 				tmp = tmp + str;
 			}
 			return new RuntimeStringValue(tmp);

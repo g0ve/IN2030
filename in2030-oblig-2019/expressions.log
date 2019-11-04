@@ -10,4 +10,38 @@ Trace line 4: 33
 Trace line 5: 4.0
 "Testing float expressions:" ==>
 Trace line 7: 
-Asp parser error on line 8: Expected a FLOAT but found a float literal
+42.0 ==>
+Trace line 8: 42.0
+ - 1017.1 ==>
+Trace line 9: -1017.1
+1.4142 * 1.4142 ==>
+Trace line 10: 1.9999616399999998
+ - 2 + 5.0 * 7 ==>
+Trace line 11: 33.0
+"Testing string expressions" ==>
+Trace line 13: 
+"Abc" ==>
+Trace line 14: 
+"x" * 10 ==>
+Trace line 15: 
+"Abra" + "ka" + "dabra" ==>
+Trace line 16: 
+"Testing boolean expressions" ==>
+Trace line 18: 
+ not False ==>
+Trace line 19: True
+"To be" or "not to be" ==>
+Trace line 20: 
+"Yes" and 3.14 ==>
+Trace line 21: 3.14
+False or True or 144 or "?" ==>
+Trace line 22: True
+"Testing comparisons" ==>
+Trace line 24: 
+1 < 0 ==>
+Trace line 25: 1
+1 <= 2 <= 3 ==>
+Trace line 26: 1
+"Testing lists" ==>
+Trace line 28: 
+Asp parser error on line 29: Too many commas, not allowed0 0
