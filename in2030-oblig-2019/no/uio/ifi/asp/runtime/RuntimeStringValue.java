@@ -8,17 +8,10 @@ import java.util.HashMap;
 
 public class RuntimeStringValue extends RuntimeValue {
 
-	String str;
-	boolean boolValue;
+	String strValue;
 
 	public RuntimeStringValue(String v) {
-		str = v;
-
-		if(str.equals("")){
-			boolValue = false;
-		}else{
-			boolValue = true;
-		}
+		strValue = v;
 	}
 
 
@@ -29,38 +22,42 @@ public class RuntimeStringValue extends RuntimeValue {
 
 	@Override
     public String showInfo(){
-        if (str.charAt(0) == '\"') {
-        	return "\"" + str + "\"";
+        if (strValue.charAt(0) == '\"') {
+        	return "\"" + strValue + "\"";
         }else {
-			return "\'" + str + "\'";
+			return "\'" + strValue + "\'";
 		}
 
     }
 
 	@Override
 	public String toString() {
-		return str;
+		return strValue;
 	}
 
 
 	@Override
 	public boolean getBoolValue(String what, AspSyntax where) {
-		return boolValue;
+		if(strValue.equals("")){
+			return false;
+		}else{
+			return true;
+		}
 	}
 
 	@Override
 	public RuntimeValue evalLen(AspSyntax where){
-		return new RuntimeIntValue(str.length());
+		return new RuntimeIntValue(strValue.length());
 	}
 
 	@Override
 	public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where){
 		if(v instanceof RuntimeStringValue){
-			return new RuntimeStringValue(str + v);
+			return new RuntimeStringValue(strValue + v);
 		}
 
-		runtimeError("Type error for +", where);
-		return null;
+		runtimeError("'+' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 
 	@Override
@@ -70,84 +67,84 @@ public class RuntimeStringValue extends RuntimeValue {
 			String tmp = "";
 
 			for (long i = 0; i < count; i++) {
-				tmp = tmp + str;
+				tmp = tmp + strValue;
 			}
 			return new RuntimeStringValue(tmp);
 		}
 
-		runtimeError("Type error for *", where);
-		return null;
+		runtimeError("'*' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 
 	@Override
 	public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where){
 		if (v instanceof RuntimeStringValue) {
-			String str2 = v.getStringValue("==", where);
+			String strValue2 = v.getStringValue("==", where);
 
-			return new RuntimeBoolValue(str.equals(str2));
+			return new RuntimeBoolValue(strValue.equals(strValue2));
 		}
 
-		runtimeError("Type error for ==", where);
-		return null;
+		runtimeError("'==' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 
 	@Override
 	public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where){
 		if (v instanceof RuntimeStringValue) {
-			String str2 = v.getStringValue("!=", where);
+			String strValue2 = v.getStringValue("!=", where);
 
-			return new RuntimeBoolValue(!str.equals(str2));
+			return new RuntimeBoolValue(!strValue.equals(strValue2));
 		}
 
-		runtimeError("Type error for !=", where);
-		return null;
+		runtimeError("'!=' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 
 	@Override
 	public RuntimeValue evalGreater(RuntimeValue v, AspSyntax where){
 		if (v instanceof RuntimeStringValue) {
-			String str2 = v.getStringValue(">", where);
+			String strValue2 = v.getStringValue(">", where);
 
-			return new RuntimeBoolValue(str.length() > str2.length());
+			return new RuntimeBoolValue(strValue.length() > strValue2.length());
 		}
 
-		runtimeError("Type error for >", where);
-		return null;
+		runtimeError("'>' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 
 	@Override
 	public RuntimeValue evalGreaterEqual(RuntimeValue v, AspSyntax where){
 		if (v instanceof RuntimeStringValue) {
-			String str2 = v.getStringValue(">=", where);
+			String strValue2 = v.getStringValue(">=", where);
 
-			return new RuntimeBoolValue(str.length() >= str2.length());
+			return new RuntimeBoolValue(strValue.length() >= strValue2.length());
 		}
 
-		runtimeError("Type error for >=", where);
-		return null;
+		runtimeError("'>=' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 
 	@Override
 	public RuntimeValue evalLess(RuntimeValue v, AspSyntax where){
 		if (v instanceof RuntimeStringValue) {
-			String str2 = v.getStringValue("<", where);
+			String strValue2 = v.getStringValue("<", where);
 
-			return new RuntimeBoolValue(str.length() < str2.length());
+			return new RuntimeBoolValue(strValue.length() < strValue2.length());
 		}
 
-		runtimeError("Type error for <", where);
-		return null;
+		runtimeError("'<' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 
 	@Override
 	public RuntimeValue evalLessEqual(RuntimeValue v, AspSyntax where){
 		if (v instanceof RuntimeStringValue) {
-			String str2 = v.getStringValue("<=", where);
+			String strValue2 = v.getStringValue("<=", where);
 
-			return new RuntimeBoolValue(str.length() <= str2.length());
+			return new RuntimeBoolValue(strValue.length() <= strValue2.length());
 		}
 
-		runtimeError("Type error for <=", where);
-		return null;
+		runtimeError("'<=' undefined for "+typeName()+"!", where);
+		return null;  // Required by the compiler!
 	}
 }

@@ -8,17 +8,10 @@ import java.util.ArrayList;
 
 public class RuntimeListValue extends RuntimeValue {
 
-    ArrayList<RuntimeValue> lst = new ArrayList<>();
-	boolean boolValue;
+    ArrayList<RuntimeValue> lstValue = new ArrayList<>();
 
 	public RuntimeListValue(ArrayList<RuntimeValue> v) {
-		lst = v;
-
-		if(lst.isEmpty()){
-			boolValue = false;
-		}else{
-			boolValue = true;
-		}
+		lstValue = v;
 	}
 
 
@@ -34,13 +27,17 @@ public class RuntimeListValue extends RuntimeValue {
 
 	@Override
 	public String toString() {
-		return String.valueOf(lst);
+		return String.valueOf(lstValue);
 	}
 
 
 	@Override
 	public boolean getBoolValue(String what, AspSyntax where) {
-		return boolValue;
+        if(lstValue.isEmpty()){
+			return false;
+		}else{
+			return true;
+		}
 	}
 
 	@Override
@@ -50,18 +47,18 @@ public class RuntimeListValue extends RuntimeValue {
 			int teller = 0;
 			long times = v.getIntValue("*", where);
 			while (teller < times) {
-				tmpLst.addAll(lst);
+				tmpLst.addAll(lstValue);
 				teller++;
 			}
 			return new RuntimeListValue(tmpLst);
 		}
-		runtimeError("Type error for *.", where);
-		return null;  // Required by the compiler
+        runtimeError("Unary '-' undefined for "+typeName()+"!", where);
+    	return null;  // Required by the compiler!
 	}
 
 	@Override
 	public RuntimeValue evalLen(AspSyntax where){
-		return new RuntimeIntValue(lst.size());
+		return new RuntimeIntValue(lstValue.size());
 	}
 
 	@Override
@@ -69,7 +66,10 @@ public class RuntimeListValue extends RuntimeValue {
 
 		if (v instanceof RuntimeIntValue) {
 			int i = (int)v.getIntValue("sub", where);
-			return lst.get(i);
+            if(i > lstValue.size()-1){
+                runtimeError("Type error for indeks "+typeName()+"!", where);
+            }
+			return lstValue.get(i);
 		}
 
         runtimeError("Subscription '[...]' undefined for "+typeName()+"!", where);
@@ -78,11 +78,11 @@ public class RuntimeListValue extends RuntimeValue {
 
     @Override
 	public void evalAssignElem(RuntimeValue inx, RuntimeValue value, AspSyntax where) {
-		if(inx instanceof RuntimeIntValue){
-			int i = (int)((RuntimeIntValue)inx).integer;
-			lst.set(i, value);
-		}
-		runtimeError("Type error for list key.", where);
+	// 	if(inx instanceof RuntimeIntValue){
+	// 		int i = (int)((RuntimeIntValue)inx).intValue;
+	// 		lstValue.set(i, value);
+	// 	}
+    //     runtimeError("Assigning to an element not allowed for "+typeName()+"!", where);
 	}
 
 }
