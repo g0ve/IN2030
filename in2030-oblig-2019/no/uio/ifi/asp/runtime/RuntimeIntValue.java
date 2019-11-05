@@ -115,10 +115,10 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalLess(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(intValue > v.getIntValue("<", where));
+      return new RuntimeBoolValue(intValue < v.getIntValue("<", where));
     }
     else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(intValue > v.getFloatValue("<", where));
+      return new RuntimeBoolValue(intValue < v.getFloatValue("<", where));
     }
     runtimeError("'<' undefined for "+typeName()+"!", where);
     return null;  // Required by the compiler
