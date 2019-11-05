@@ -43,9 +43,9 @@ public class RuntimeDictValue extends RuntimeValue {
             String key = entry.getKey();
             RuntimeValue value = entry.getValue();
             if(teller < dict.size()-1){
-                output = output + "\'" + key + "\': " + value.toString() + ", ";
+                output = output + "\'" + key + "\': " + value.showInfo() + ", ";
             }else{
-                output = output + "\'" + key + "\': " + value.toString();
+                output = output + "\'" + key + "\': " + value.showInfo();
             }
 
             teller = teller + 1;
