@@ -4,11 +4,12 @@ import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.parser.AspSyntax;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class RuntimeDictValue extends RuntimeValue {
 
-    HashMap<String, RuntimeValue> dict = new HashMap<>();
+    Map<String, RuntimeValue> dict = new HashMap<>();
 	boolean boolValue;
 
 	public RuntimeDictValue(HashMap<String, RuntimeValue> v) {
@@ -34,7 +35,24 @@ public class RuntimeDictValue extends RuntimeValue {
 
 	@Override
 	public String toString() {
-		return String.valueOf(dict);
+		String output = "";
+        int teller = 0;
+
+        output = output + "{";
+        for (Map.Entry<String, RuntimeValue> entry : dict.entrySet()) {
+            String key = entry.getKey();
+            RuntimeValue value = entry.getValue();
+            if(teller < dict.size()-1){
+                output = output + "\'" + key + "\': " + value.toString() + ", ";
+            }else{
+                output = output + "\'" + key + "\': " + value.toString();
+            }
+
+            teller = teller + 1;
+        }
+        output = output + '}';
+
+        return output;
 	}
 
 

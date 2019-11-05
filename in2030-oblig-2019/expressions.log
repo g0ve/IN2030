@@ -49,10 +49,10 @@ Trace line 29: []
 [ - 1, 0, 1] * (2) ==>
 Trace line 30: [-1, 0, 1, -1, 0, 1]
 [101, 102, 103][1] ==>
-Trace line 31: [101, 102, 103]
+Trace line 31: 102
 "Testing dictionaries" ==>
 Trace line 33: 'Testing dictionaries'
 {"A":"a", "B":1 + 2} ==>
-Trace line 34: {A=a, B=3}
+Trace line 34: {'A': a, 'B': 3}
 {"Ja":1, "Nei":0}["Ja"] ==>
-Trace line 35: {Nei=0, Ja=1}
+Trace line 35: 1
