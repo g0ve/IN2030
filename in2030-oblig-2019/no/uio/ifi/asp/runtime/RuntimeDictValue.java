@@ -10,16 +10,9 @@ import java.util.Map;
 public class RuntimeDictValue extends RuntimeValue {
 
     Map<String, RuntimeValue> dict = new HashMap<>();
-	boolean boolValue;
 
 	public RuntimeDictValue(HashMap<String, RuntimeValue> v) {
 		dict = v;
-
-		if(dict.isEmpty()){
-			boolValue = false;
-		}else{
-			boolValue = true;
-		}
 	}
 
 
@@ -58,7 +51,11 @@ public class RuntimeDictValue extends RuntimeValue {
 
 	@Override
 	public boolean getBoolValue(String what, AspSyntax where) {
-		return boolValue;
+        if(dict.isEmpty()){
+            return false;
+        }else{
+            return true;
+        }
 	}
 
 	@Override
@@ -74,29 +71,18 @@ public class RuntimeDictValue extends RuntimeValue {
 			}
 			runtimeError("Key not found in dictionary.", where);
 		}
-		if (v instanceof RuntimeIntValue) {
-			if(dict.get(v.toString()) != null){
-				return dict.get(v.toString());
-			}
-			runtimeError("Key not found in dictionary.", where);
-		}
-		if (v instanceof RuntimeFloatValue) {
-			if(dict.get(v.toString()) != null){
-				return dict.get(v.toString());
-			}
-			runtimeError("Key not found in dictionary.", where);
-		}
-		runtimeError("Type error for dictionary key.", where);
-		return null;  // Required by the compiler
+
+        runtimeError("Subscription '[...]' undefined for "+typeName()+"!", where);
+        return null;  // Required by the compiler!
 	}
 
     @Override
 	public void evalAssignElem(RuntimeValue inx, RuntimeValue value, AspSyntax where) {
-		if(inx instanceof RuntimeIntValue){
-			String key = inx.getStringValue("assign elem dict", where);
-			dict.put(key, value);
-		}
-		runtimeError("Type error for dictionary key.", where);
+		// if(inx instanceof RuntimeIntValue){
+		// 	String key = inx.getStringValue("assign elem dict", where);
+		// 	dict.put(key, value);
+		// }
+		// runtimeError("Type error for dictionary key.", where);
 	}
 
 }
