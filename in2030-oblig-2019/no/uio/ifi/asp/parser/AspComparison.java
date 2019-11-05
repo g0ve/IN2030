@@ -59,8 +59,11 @@ public class AspComparison extends AspSyntax {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
+
+
 		RuntimeValue v = atLst.get(0).eval(curScope);
-		for (int i = 1; i > atLst.size(); i++){
+		for (int i = 1; i < atLst.size(); i++){
+			v = atLst.get(i-1).eval(curScope);
 			TokenKind t = acoLst.get(i-1).token.kind;
 			if(t == TokenKind.lessToken){
 				v = v.evalLess(atLst.get(i).eval(curScope), this);

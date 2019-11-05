@@ -39,9 +39,9 @@ Trace line 22: True
 "Testing comparisons" ==>
 Trace line 24: 'Testing comparisons'
 1 < 0 ==>
-Trace line 25: 1
+Trace line 25: False
 1 <= 2 <= 3 ==>
-Trace line 26: 1
+Trace line 26: True
 "Testing lists" ==>
 Trace line 28: 'Testing lists'
 [] ==>

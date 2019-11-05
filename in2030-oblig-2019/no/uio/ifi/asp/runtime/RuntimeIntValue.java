@@ -114,15 +114,30 @@ public class RuntimeIntValue extends RuntimeValue{
 
   @Override
   public RuntimeValue evalLess(RuntimeValue v, AspSyntax where) {
+    RuntimeValue res = null;
+
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeBoolValue(integer > v.getIntValue("< operand", where));
+        long v2 = v.getIntValue("< operand", where);
+        return new RuntimeBoolValue(integer < v2);
+    } else if (v instanceof RuntimeFloatValue) {
+        double v2 = v.getFloatValue("< operand", where);
+        return new RuntimeBoolValue(integer < v2);
+    } else {
+        runtimeError("Type error for <.", where);
     }
-    else if(v instanceof RuntimeFloatValue){
-      return new RuntimeBoolValue(integer > v.getFloatValue("< operand", where));
-    }
-    runtimeError("Type error for <.", where);
-    return null;  // Required by the compiler
-  }
+
+    return res;
+}
+
+  //   if (v instanceof RuntimeIntValue) {
+  //     return new RuntimeBoolValue(integer > v.getIntValue("< operand", where));
+  //   }
+  //   else if(v instanceof RuntimeFloatValue){
+  //     return new RuntimeBoolValue(integer > v.getFloatValue("< operand", where));
+  //   }
+  //   runtimeError("Type error for <.", where);
+  //   return null;  // Required by the compiler
+  // }
 
   @Override
   public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where) {
