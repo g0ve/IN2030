@@ -69,6 +69,9 @@ public class RuntimeListValue extends RuntimeValue {
 
 		if (v instanceof RuntimeIntValue) {
 			int i = (int)v.getIntValue("sub", where);
+            if(i > lst.size()-1){
+                runtimeError("Type error for indeks "+typeName()+"!", where);
+            }
 			return lst.get(i);
 		}
 
