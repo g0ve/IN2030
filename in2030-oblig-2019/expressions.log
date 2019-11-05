@@ -25,7 +25,7 @@ Trace line 14: 'Abc'
 "x" * 10 ==>
 Trace line 15: 'xxxxxxxxxx'
 "Abra" + "ka" + "dabra" ==>
-Trace line 16: 'Abraka'
+Trace line 16: 'Abrakadabra'
 "Testing boolean expressions" ==>
 Trace line 18: 'Testing boolean expressions'
  not False ==>
