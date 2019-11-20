@@ -13,8 +13,8 @@ public class AspIfStmt extends AspCompoundStmt{
   AspIfStmt(int n){
     super(n);
   }
-    ArrayList<AspSuite> suites = new ArrayList<>();
-    ArrayList<AspExpr> exprs = new ArrayList<>();
+    ArrayList<AspSuite> asLst = new ArrayList<>();
+    ArrayList<AspExpr> aeLst = new ArrayList<>();
 
   public static AspIfStmt parse(Scanner s){
     enterParser("if stmt");
@@ -24,9 +24,9 @@ public class AspIfStmt extends AspCompoundStmt{
 
     boolean run = true;
     while(run){
-      ais.exprs.add(AspExpr.parse(s));
+      ais.aeLst.add(AspExpr.parse(s));
       skip(s, TokenKind.colonToken);
-      ais.suites.add(AspSuite.parse(s));
+      ais.asLst.add(AspSuite.parse(s));
       if(s.curToken().kind != elifToken){
         run = false;
       }
@@ -37,7 +37,7 @@ public class AspIfStmt extends AspCompoundStmt{
     if(s.curToken().kind == elseToken){
       skip(s, TokenKind.elseToken);
       skip(s, TokenKind.colonToken);
-      ais.suites.add(AspSuite.parse(s));
+      ais.asLst.add(AspSuite.parse(s));
     }
     leaveParser("if stmt");
     return ais;
@@ -46,28 +46,48 @@ public class AspIfStmt extends AspCompoundStmt{
   @Override
   public void prettyPrint(){
     prettyWrite("if ");
-    exprs.get(0).prettyPrint();
+    aeLst.get(0).prettyPrint();
     prettyWrite(": ");
-    suites.get(0).prettyPrint();
+    asLst.get(0).prettyPrint();
 
-    if(exprs.size() > 1){
-      for(int i = 1; i <exprs.size(); i++){
+    if(aeLst.size() > 1){
+      for(int i = 1; i <aeLst.size(); i++){
         prettyWrite("elif ");
-        exprs.get(i).prettyPrint();
+        aeLst.get(i).prettyPrint();
         prettyWrite(": ");
-        suites.get(i).prettyPrint();
+        asLst.get(i).prettyPrint();
       }
     }
-    if(suites.size() > exprs.size()){
+    if(asLst.size() > aeLst.size()){
       prettyWrite("else");
       prettyWrite(": ");
 
-      suites.get(suites.size()-1).prettyPrint();
+      asLst.get(asLst.size()-1).prettyPrint();
     }
   }
 
   @Override
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+     RuntimeValue v = null;
+    if(aeLst.size() > 1){
+        for(int i = 1; i < aeLst.size(); i++){ {
+            AspExpr ae = aeLst.get(i);
+            v = ae.eval(curScope);
+
+            if (v.getBoolValue("ifStmt", this)) {
+                trace("if - true");
+                AspSuite as = asLst.get(i);
+
+                return as.eval(curScope);
+            }
+        }
+    }
+
+    if(asLst.size() > aeLst.size()){
+        trace("else");
+        return asLst.get(asLst.size()-1);
+    }
+
     return null;
   }
 }
