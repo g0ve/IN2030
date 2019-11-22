@@ -46,6 +46,7 @@ public class AspPrimary extends AspSyntax {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
+		trace("Primary");
 		RuntimeValue v = aa.eval(curScope);
 
 		for (AspPrimarySuffix aps : apsLst) {
@@ -55,7 +56,8 @@ public class AspPrimary extends AspSyntax {
 			}
 
 			if (aps instanceof AspArguments) {
-				return null;
+				ArrayList<RuntimeValue> rvLst = aps.eval(curScope).getList("Primary", this);
+				v = v.evalFuncCall(rvLst, this);
 			}
 		}
 		return v;

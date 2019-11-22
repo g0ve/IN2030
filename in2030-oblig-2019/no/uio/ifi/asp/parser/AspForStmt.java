@@ -46,6 +46,7 @@ public class AspForStmt extends AspCompoundStmt{
 
   @Override
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-    return null;
+    RuntimeValue v = ae.eval(curScope);
+    
   }
 }
