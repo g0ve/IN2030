@@ -29,6 +29,8 @@ public class AspExprStmt extends AspSmallStmt{
   }
   @Override
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-    return null;
+    RuntimeValue rv = ae.eval(curScope);
+    trace("return" + rv.showInfo());
+    throw new RuntimeReturnValue(rv);
   }
 }

@@ -1,0 +1,6 @@
+FucDef - ferdig
+AspReturn - Done
+AspCompOpr - ?
+AspExprStmt - done
+AspFactorOpr - ?
+AspProgram - done
