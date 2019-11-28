@@ -353,42 +353,5 @@ public class Scanner {
              }
          }
          return null;
-         /*
-         private TokenKind checkOperator(String tokenStr){
-         if (tokenStr == "and") {
-         return andToken;
-     }else if (tokenStr == "def") {
-     return defToken;
-    }else if (tokenStr == "elif") {
-    return elifToken;
-    }else if (tokenStr == "else") {
-    return elseToken;
-    }else if (tokenStr == "False") {
-    return falseToken;
-    }else if (tokenStr == "for") {
-    return forToken;
-    }else if (tokenStr == "if") {
-    return ifToken;
-    }else if (tokenStr == "in") {
-    return inToken;
-    }else if (tokenStr == "None") {
-    return noneToken;
-    }else if (tokenStr == "not") {
-    return notToken;
-    }else if (tokenStr == "or") {
-    return orToken;
-    }else if (tokenStr == "pass") {
-    return passToken;
-    }else if (tokenStr == "return") {
-    return returnToken;
-    }else if (tokenStr == "True") {
-    return trueToken;
-    }else if (tokenStr == "while") {
-    return whileToken;
-    }else{
-    return null;
-    }
-    }
-    */
      }
    }

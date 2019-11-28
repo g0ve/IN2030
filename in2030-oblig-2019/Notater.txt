@@ -4,3 +4,5 @@ AspCompOpr - ?
 AspExprStmt - done
 AspFactorOpr - ?
 AspProgram - done
+RuntimeLibrary - gjøres
+RuntimeScope - ? (input - print: acctualParams.get(0)?) må gjøre range
