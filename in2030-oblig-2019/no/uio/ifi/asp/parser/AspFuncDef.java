@@ -14,20 +14,18 @@ public class AspFuncDef extends AspCompoundStmt{
     super(n);
   }
   AspSuite as;
-  AspName an;
   ArrayList<AspName> anLst = new ArrayList<>();
 
 
   public static AspFuncDef parse(Scanner s){
     enterParser("func def");
-    AspFuncDef adf = new AspFuncDef(s.curLineNum());
-    //skip(s, TokenKind.defToken);
+    AspFuncDef afd = new AspFuncDef(s.curLineNum());
     skip(s, defToken);
-    adf.an = AspName.parse(s);
+    afd.anLst.add(AspName.parse(s));
     skip(s, leftParToken);
 
     while(s.curToken().kind != rightParToken){
-      adf.anLst.add(AspName.parse(s));
+      afd.anLst.add(AspName.parse(s));
       if(s.curToken().kind != commaToken){
         break;
       }
@@ -36,23 +34,25 @@ public class AspFuncDef extends AspCompoundStmt{
 
     skip(s, rightParToken);
     skip(s, colonToken);
-    adf.as = AspSuite.parse(s);
+    afd.as = AspSuite.parse(s);
 
     leaveParser("func def");
-    return adf;
+    return afd;
   }
 
   @Override
   public void prettyPrint(){
     prettyWrite("def ");
-    an.prettyPrint();
+    anLst.get(0).prettyPrint();
     prettyWrite(" (");
+
     for(AspName name : anLst){
-      name.prettyPrint();
       if(name != anLst.get(anLst.size()-1)) {
             prettyWrite(", ");
         }
+        name.prettyPrint();
     }
+
     prettyWrite(")");
     prettyWrite(":");
     as.prettyPrint();
@@ -60,16 +60,12 @@ public class AspFuncDef extends AspCompoundStmt{
 
   @Override
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-     RuntimeValue v = null;
+     AspName an = anLst.get(0);
+
      RuntimeFunc rf = new RuntimeFunc(this, curScope, an.toString());
 
-     for (AspName an : anLst) {
-         v = new RuntimeStringValue(an.toString());
-         rf. .add(v);
-     }
-
-     trace("def " + an.toString());
      curScope.assign(an.toString(), rf);
+     trace("def " + an.toString());
      return rf;
   }
 
