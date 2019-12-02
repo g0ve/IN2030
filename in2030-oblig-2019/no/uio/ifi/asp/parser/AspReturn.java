@@ -34,6 +34,7 @@ public class AspReturn extends AspSmallStmt{
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
     RuntimeValue rv = ae.eval(curScope);
     trace("return" + rv.showInfo());
-    throw new RuntimeReturnValue(rv);
+    throw new RuntimeReturnValue(rv, lineNum);
+    return null;
   }
 }

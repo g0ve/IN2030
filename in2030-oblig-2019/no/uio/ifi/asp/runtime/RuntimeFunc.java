@@ -34,7 +34,7 @@ public class RuntimeFunc extends RuntimeValue {
 		}
 
 		try {
-			def.runFunction(defScope);
+			def.as.eval(defScope);
 		} catch(RuntimeReturnValue rrv) {
 			return rrv.value;
 		}

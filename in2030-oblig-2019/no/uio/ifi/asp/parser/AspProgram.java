@@ -42,12 +42,11 @@ public class AspProgram extends AspSyntax {
       //-- Must be changed in part 4:
 
       for (AspStmt as : asLst) {
-        try {
-          as.eval(curScope);
-        } catch (RuntimeReturnValue rrv) {
-          RuntimeValue.runtimeError("Return statement outside function!", rrv.lineNum);
-        }
+          try {
+              as.eval(curScope);
+          } catch(Exception e) {
+              runtimeError("Program", this);
+          }
       }
-      return null;
-    }
+  }
 }

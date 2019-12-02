@@ -63,8 +63,12 @@ public class AspSuite extends AspSyntax {
 		//-- Must be changed in part 3:
 		RuntimeValue v = null;
 
-		for (AspStmt as : asLst) {
-			v = as.eval(curScope);
+		if(assl == null){
+			for (AspStmt as : asLst) {
+				v = as.eval(curScope);
+			}
+		}else{
+			v = assl.eval(curScope);
 		}
 
 		return v;
