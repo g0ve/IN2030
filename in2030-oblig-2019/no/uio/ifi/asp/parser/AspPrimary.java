@@ -48,17 +48,17 @@ public class AspPrimary extends AspSyntax {
 		//-- Must be changed in part 3:
 		trace("Primary");
 		RuntimeValue v = aa.eval(curScope);
+		RuntimeValue apsV = null;
 
 		for (AspPrimarySuffix aps : apsLst) {
 			if(aps instanceof AspSubscription){
-				RuntimeValue apsV = aps.eval(curScope);
+				apsV = aps.eval(curScope);
 				v = v.evalSubscription(apsV, this);
 			}
 
 			if (aps instanceof AspArguments) {
-				//har ikke noe som heter getList i RuntimeValue....
-				ArrayList<RuntimeValue> rvLst = aps.eval(curScope).getList("Primary", this);
-				v = v.evalFuncCall(rvLst, this);
+				apsV = aps.eval(curScope);
+				v = v.evalAssignElem(apsV, this);
 			}
 		}
 		return v;
