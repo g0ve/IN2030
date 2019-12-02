@@ -62,7 +62,7 @@ public class AspAssignment extends AspSmallStmt{
     if(asLst.size() > 0){
       rvName = name.eval(curScope);
       for(int i = 0; i < asLst.size() -1; i++){
-        rvName = name.evalSubscription(asLst.get(i).eval(curScope), this);
+        rvName = rvName.evalSubscription(asLst.get(i).eval(curScope), this);
       }
       RuntimeValue lastIndex = asLst.get(asLst.size() -1).eval(curScope);
       rvName.evalAssignElem(lastIndex, rv, this);

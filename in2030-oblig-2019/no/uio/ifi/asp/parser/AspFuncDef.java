@@ -16,6 +16,9 @@ public class AspFuncDef extends AspCompoundStmt{
   AspSuite as;
   ArrayList<AspName> anLst = new ArrayList<>();
 
+  public AspSuite getSuite(){
+    return as;
+  }
 
   public static AspFuncDef parse(Scanner s){
     enterParser("func def");

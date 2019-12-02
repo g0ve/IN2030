@@ -18,7 +18,7 @@ public class RuntimeLibrary extends RuntimeScope {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
           checkNumParams(actualParams, 1, "float", where);
-          return RuntimeFloatValue(actualParams.get(0).getFloatValue("float",where));
+          return new RuntimeFloatValue(actualParams.get(0).getFloatValue("float",where));
         }});
 
       //input
@@ -35,7 +35,7 @@ public class RuntimeLibrary extends RuntimeScope {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
           checkNumParams(actualParams, 1, "int", where);
-          return RuntimeIntValue(actualParams.get(0).getIntValue("int",where));
+          return new RuntimeIntValue(actualParams.get(0).getIntValue("int",where));
         }});
 
       // len
@@ -58,20 +58,20 @@ public class RuntimeLibrary extends RuntimeScope {
           return new RuntimeNoneValue();
         }});
 
-      //range in progress
+      //range
       assign("range", new RuntimeFunc("range") {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
           checkNumParams(actualParams, 1, "range", where);
-          int v1 = actualParams.get(0).getIntValue("int",where);
-          int v2 = actualParams.get(1).getIntValue("int",where);
+          long v1 = actualParams.get(0).getIntValue("int",where);
+          long v2 = actualParams.get(1).getIntValue("int",where);
 
-          ArrayList<Integer> list = new ArrayList<>();
+          ArrayList<RuntimeValue> list = new ArrayList<>();
 
-          for(int i = v1; i < v2; i++){
-            list.add(i);
+          for(long i = v1; i < v2; i++){
+            list.add(new RuntimeIntValue(i));
           }
-          return RuntimeListValue(list);
+          return new RuntimeListValue(list);
         }});
 
       //str
@@ -79,7 +79,7 @@ public class RuntimeLibrary extends RuntimeScope {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
           checkNumParams(actualParams, 1, "str", where);
-          return RuntimeStringValue(actualParams.get(0).toString());
+          return new RuntimeStringValue(actualParams.get(0).toString());
         }});
     }
 

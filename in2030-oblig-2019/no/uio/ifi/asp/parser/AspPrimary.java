@@ -56,6 +56,7 @@ public class AspPrimary extends AspSyntax {
 			}
 
 			if (aps instanceof AspArguments) {
+				//har ikke noe som heter getList i RuntimeValue....
 				ArrayList<RuntimeValue> rvLst = aps.eval(curScope).getList("Primary", this);
 				v = v.evalFuncCall(rvLst, this);
 			}

@@ -45,7 +45,8 @@ public class AspProgram extends AspSyntax {
           try {
               as.eval(curScope);
           } catch(Exception e) {
-              runtimeError("Program", this);
+            //dette fungerer ikke
+              RuntimeValue.runtimeError("Program", this);
           }
       }
   }

@@ -61,7 +61,7 @@ public class AspSmallStmtList extends AspStmt{
           try {
               ass.eval(curScope);
           } catch(Exception e) {
-              runtimeError("Small Stmt List", this);
+              RuntimeValue.runtimeError("Small Stmt List", this);
           }
       }
   }

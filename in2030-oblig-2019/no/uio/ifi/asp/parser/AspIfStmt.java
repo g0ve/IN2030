@@ -71,7 +71,7 @@ public class AspIfStmt extends AspCompoundStmt{
      RuntimeValue v = null;
 
      trace("if");
-     for(int i = 0; i < aeLst.size(); i++){ {
+     for(int i = 0; i < aeLst.size(); i++){
          AspExpr ae = aeLst.get(i);
          v = ae.eval(curScope);
 
@@ -81,14 +81,10 @@ public class AspIfStmt extends AspCompoundStmt{
              return v;
          }
      }
-
-
     if(asLst.size() > aeLst.size()){
         trace("else");
         return asLst.get(asLst.size()-1).eval(curScope);
     }
-
     return null;
-    }
   }
 }
