@@ -51,15 +51,12 @@ public class AspPrimary extends AspSyntax {
 		RuntimeValue apsV = null;
 
 		for (AspPrimarySuffix aps : apsLst) {
+			apsV = aps.eval(curScope);
+
 			if(aps instanceof AspSubscription){
-				apsV = aps.eval(curScope);
 				v = v.evalSubscription(apsV, this);
 			}
 
-			if (aps instanceof AspArguments) {
-				apsV = aps.eval(curScope);
-				v = v.evalAssignElem(apsV, this);
-			}
 		}
 		return v;
 	}

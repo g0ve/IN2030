@@ -66,6 +66,8 @@ public class AspArguments extends AspPrimarySuffix {
 		for (AspExpr ae : aeLst) {
 			lst.add(ae.eval(curScope));
 		}
+
+		trace("Arguments Call function")
 		return new RuntimeListValue(lst);
 	}
 }

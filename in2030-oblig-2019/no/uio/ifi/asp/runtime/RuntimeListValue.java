@@ -78,11 +78,11 @@ public class RuntimeListValue extends RuntimeValue {
 
     @Override
 	public void evalAssignElem(RuntimeValue inx, RuntimeValue value, AspSyntax where) {
-	// 	if(inx instanceof RuntimeIntValue){
-	// 		int i = (int)((RuntimeIntValue)inx).intValue;
-	// 		lstValue.set(i, value);
-	// 	}
-    //     runtimeError("Assigning to an element not allowed for "+typeName()+"!", where);
+		if(inx instanceof RuntimeIntValue){
+			int i = (int)((RuntimeIntValue)inx).intValue;
+			lstValue.set(i, value);
+		}
+        runtimeError("Assigning to an element not allowed for "+typeName()+"!", where);
 	}
 
 }

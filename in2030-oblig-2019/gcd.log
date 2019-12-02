@@ -538,7 +538,7 @@
 def GCD (m, n):
   if n == 0: 
     return m
-  else : 
+  else: 
     return GCD(n, m % n)
 v1 = int(input("A number: "))
 v2 = int(input("Another number: "))
