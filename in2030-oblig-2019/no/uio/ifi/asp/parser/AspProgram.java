@@ -40,14 +40,14 @@ public class AspProgram extends AspSyntax {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
       //-- Must be changed in part 4:
-
-      for (AspStmt as : asLst) {
+      for (AspStmt as: asLst) {
           try {
               as.eval(curScope);
-          } catch(Exception e) {
-            //dette fungerer ikke
-              RuntimeValue.runtimeError("Program", this);
+          } catch (RuntimeReturnValue rrv) {
+              RuntimeValue.runtimeError("Return statement outside function!",
+              rrv.lineNum);
           }
       }
+      return null;
   }
 }

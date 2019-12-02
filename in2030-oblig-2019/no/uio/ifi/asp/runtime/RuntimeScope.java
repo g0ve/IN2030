@@ -1,6 +1,6 @@
 package no.uio.ifi.asp.runtime;
 
-// For part 4:
+// For part 4
 
 import java.util.HashMap;
 

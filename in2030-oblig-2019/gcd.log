@@ -535,7 +535,7 @@
   </stmt>
 </program>
 
-def GCD (m, n):
+def GCD (, GCD, mn):
   if n == 0: 
     return m
   else: 

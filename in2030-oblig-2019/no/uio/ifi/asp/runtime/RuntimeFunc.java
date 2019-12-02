@@ -11,13 +11,15 @@ public class RuntimeFunc extends RuntimeValue {
 	String name;
 
 	public RuntimeFunc(AspFuncDef def, RuntimeScope defscope, String name){
-    this.def = def;
-	  this.defScope = defScope;
-	  this.name = name;
+    	this.def = def;
+	  	this.defScope = defScope;
+	  	this.name = name;
     }
-		public RuntimeFunc(String name){
-			this.name = name;
-		}
+
+	public RuntimeFunc(String name){
+		this.name = name;
+		this.defScope = defScope;
+	}
 
     @Override
     protected String typeName() {
@@ -31,15 +33,15 @@ public class RuntimeFunc extends RuntimeValue {
 
     @Override
     public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
-		RuntimeScope defScope = new RuntimeScope(defScope);
+		RuntimeScope newscope = new RuntimeScope(defScope);
 
 		for (RuntimeValue v : actualParams) {
 			String id = v.getStringValue("def", where);
-			defScope.assign(id, v);
+			newscope.assign(id, v);
 		}
 
 		try {
-			def.getSuite().eval(defScope);
+			def.getSuite().eval(newscope);
 		} catch(RuntimeReturnValue rrv) {
 			return rrv.value;
 		}
