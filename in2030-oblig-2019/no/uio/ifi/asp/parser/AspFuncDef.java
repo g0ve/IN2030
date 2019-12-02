@@ -65,7 +65,7 @@ public class AspFuncDef extends AspCompoundStmt{
 
      for (AspName an : anLst) {
          v = new RuntimeStringValue(an.toString());
-         rf. .add(v);
+         rf.add(v);
      }
 
      trace("def " + an.toString());
@@ -74,11 +74,6 @@ public class AspFuncDef extends AspCompoundStmt{
   }
 
   public void runFunction(RuntimeScope curScope) throws RuntimeReturnValue {
-      try {
-          as.eval(curScope);
-      } catch (RuntimeReturnValue rrv) {
-          return rrv.value;
-      }
-      return null;
+    as.eval(curScope);
   }
 }

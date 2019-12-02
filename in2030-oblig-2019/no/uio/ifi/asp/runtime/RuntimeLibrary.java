@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import no.uio.ifi.asp.main.*;
+import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.parser.AspSyntax;
 
 public class RuntimeLibrary extends RuntimeScope {
@@ -62,7 +63,15 @@ public class RuntimeLibrary extends RuntimeScope {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
           checkNumParams(actualParams, 1, "range", where);
-          return actualParams.get(0).evalLen(where);
+          int v1 = actualParams.get(0).getIntValue("int",where);
+          int v2 = actualParams.get(1).getIntValue("int",where);
+
+          ArrayList<Integer> list = new ArrayList<>();
+
+          for(int i = v1; i < v2; i++){
+            list.add(i);
+          }
+          return RuntimeListValue(list);
         }});
 
       //str
@@ -70,7 +79,7 @@ public class RuntimeLibrary extends RuntimeScope {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
           checkNumParams(actualParams, 1, "str", where);
-          return RuntimeStringValue(actualParams.get(0).toString())
+          return RuntimeStringValue(actualParams.get(0).toString());
         }});
     }
 

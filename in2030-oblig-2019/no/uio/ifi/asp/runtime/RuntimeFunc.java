@@ -29,7 +29,7 @@ public class RuntimeFunc extends RuntimeValue {
 		RuntimeScope defScope = new RuntimeScope(defScope);
 
 		for (RuntimeValue v : actualParams) {
-			String id = v.getStringsValues("def", where);
+			String id = v.getStringValue("def", where);
 			defScope.assign(id, v);
 		}
 
