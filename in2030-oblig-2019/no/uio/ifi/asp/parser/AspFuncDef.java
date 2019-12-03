@@ -10,33 +10,26 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 import java.util.ArrayList;
 
 public class AspFuncDef extends AspCompoundStmt{
-  AspFuncDef(int n){
-    super(n);
-  }
-  AspSuite as;
-  ArrayList<AspName> anLst = new ArrayList<>();
+    AspName an;
+    AspSuite as;
+    ArrayList<AspName> anLst = new ArrayList<>();
 
-  public AspSuite getSuite(){
-    return as;
-  }
-
-  public ArrayList<AspName> getLstName(){
-      return anLst;
-  }
-
-  public ArrayList<AspName> getAspNameList(){
-    return anLst;
-  }
+    AspFuncDef(int n){
+        super(n);
+    }
 
   public static AspFuncDef parse(Scanner s){
     enterParser("func def");
+
     AspFuncDef afd = new AspFuncDef(s.curLineNum());
+
     skip(s, defToken);
-    afd.anLst.add(AspName.parse(s));
+    afd.an = AspName.parse(s);
     skip(s, leftParToken);
 
     while(s.curToken().kind != rightParToken){
       afd.anLst.add(AspName.parse(s));
+
       if(s.curToken().kind != commaToken){
         break;
       }
@@ -54,14 +47,17 @@ public class AspFuncDef extends AspCompoundStmt{
   @Override
   public void prettyPrint(){
     prettyWrite("def ");
-    anLst.get(0).prettyPrint();
+    an.prettyPrint();
     prettyWrite(" (");
 
+    int teller = 0;
     for(AspName name : anLst){
-      if(name != anLst.get(anLst.size()-1)) {
+        if(teller > 0) {
             prettyWrite(", ");
         }
+
         name.prettyPrint();
+        ++teller;
     }
 
     prettyWrite(")");

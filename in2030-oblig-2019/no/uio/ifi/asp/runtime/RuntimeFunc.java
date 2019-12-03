@@ -56,7 +56,7 @@ public class RuntimeFunc extends RuntimeValue {
 			return rrv.value;
 		}
 
-		return v;
+		return new RuntimeNoneValue();
 	}
 
 }
