@@ -1,21 +1,21 @@
-Trace line 8: def function GCD
+Trace line 8: def GCD
 Trace line 14: Call function input with params ['A number: ']
-Trace line 14: Call function int with params ['6']
-Trace line 14: v1 = 6
+Trace line 14: Call function int with params ['65']
+Trace line 14: v1 = 65
 Trace line 15: Call function input with params ['Another number: ']
 Trace line 15: Call function int with params ['4']
 Trace line 15: v2 = 4
-Trace line 17: Call function GCD with params [6, 4]
+Trace line 17: Call function GCD with params [65, 4]
 Trace line 9: else: ...
-Trace line 12: Call function GCD with params [4, 2]
+Trace line 12: Call function GCD with params [4, 1]
 Trace line 9: else: ...
-Trace line 12: Call function GCD with params [2, 0]
+Trace line 12: Call function GCD with params [1, 0]
 Trace line 9: if True alt #1: ...
-Trace line 10: return2
-Trace line 12: return2
-Trace line 12: return2
-Trace line 17: res = 2
-Trace line 18: Call function str with params [6]
+Trace line 10: return1
+Trace line 12: return1
+Trace line 12: return1
+Trace line 17: res = 1
+Trace line 18: Call function str with params [65]
 Trace line 18: Call function str with params [4]
-Trace line 18: Call function print with params ['GCD(6,4) =', 2]
+Trace line 18: Call function print with params ['GCD(65,4) =', 1]
 Trace line 18: None
