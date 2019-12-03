@@ -60,7 +60,6 @@ public class AspComparison extends AspSyntax {
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
 
-
 		RuntimeValue v = atLst.get(0).eval(curScope);
 		for (int i = 1; i < atLst.size(); i++){
 			v = atLst.get(i-1).eval(curScope);

@@ -46,7 +46,6 @@ public class AspPrimary extends AspSyntax {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
-		trace("Primary");
 		RuntimeValue v = aa.eval(curScope);
 		RuntimeValue apsV = null;
 
@@ -55,6 +54,7 @@ public class AspPrimary extends AspSyntax {
 
 			if(aps instanceof AspSubscription){
 				v = v.evalSubscription(apsV, this);
+				trace("Call " + v + " with prarams xxx");
 			}
 
 		}

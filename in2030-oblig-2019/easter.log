@@ -1,17 +1,1 @@
-Trace line 3: assignment
-Trace line 3: Primary
-Trace line 3: Primary
-Trace line 3: expr
-Trace line 3: Primary
-Trace line 3: Primary
-Trace line 3: Primary
-Trace line 3: Primary
-Trace line 3: expr
-Trace line 3: expr
-Trace line 4: assignment
-Trace line 4: Primary
-Trace line 4: expr
-Trace line 4: Subscription
-Trace line 4: Primary
-Trace line 4: expr
-Asp runtime error on line 4: Assigning to an element not allowed for list!
+Trace line 3: M_name = ['', '', '', '', '', '', '', '', '', '', '', '', '']

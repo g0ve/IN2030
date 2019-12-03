@@ -82,7 +82,9 @@ public class RuntimeListValue extends RuntimeValue {
 			int i = (int)((RuntimeIntValue)inx).intValue;
 			lstValue.set(i, value);
 		}
-        runtimeError("Assigning to an element not allowed for "+typeName()+"!", where);
+    else{
+      runtimeError("Assigning to an element not allowed for "+typeName()+"!", where);
+    }
 	}
 
 }

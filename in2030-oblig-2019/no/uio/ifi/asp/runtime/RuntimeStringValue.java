@@ -32,7 +32,7 @@ public class RuntimeStringValue extends RuntimeValue {
 
 	@Override
 	public String toString() {
-		return strValue;
+		return "\'" + strValue + "\'";
 	}
 
 
@@ -53,9 +53,8 @@ public class RuntimeStringValue extends RuntimeValue {
 	@Override
 	public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where){
 		if(v instanceof RuntimeStringValue){
-			return new RuntimeStringValue(strValue + v);
+			return new RuntimeStringValue(strValue + v.getStringValue("+", where));
 		}
-
 		runtimeError("'+' undefined for "+typeName()+"!", where);
 		return null;  // Required by the compiler!
 	}

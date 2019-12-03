@@ -70,19 +70,19 @@ public class AspIfStmt extends AspCompoundStmt{
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
      RuntimeValue v = null;
 
-     trace("if");
      for(int i = 0; i < aeLst.size(); i++){
          AspExpr ae = aeLst.get(i);
          v = ae.eval(curScope);
 
          if (v.getBoolValue("ifStmt", this)) {
-             AspSuite as = asLst.get(i);
+           trace("if True alt #" + (i+1) + ": ...");
+            AspSuite as = asLst.get(i);
 
-             return v;
+            return as.eval(curScope);
          }
      }
     if(asLst.size() > aeLst.size()){
-        trace("else");
+        trace("else: ...");
         return asLst.get(asLst.size()-1).eval(curScope);
     }
     return null;

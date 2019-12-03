@@ -1,9 +1,5 @@
-Trace line 8: def no.uio.ifi.asp.parser.AspName@3b9a45b3
-Trace line 14: assignment
-Trace line 14: Primary
-Trace line 14: Primary
-Trace line 14: Primary
-Trace line 14: expr
-Trace line 14: Arguments Call function
-Trace line 14: expr
-Asp runtime error on line 14: Type error: expr is not a Boolean!
+Trace line 8: def GCD
+Trace line 14: v1 = function int
+Trace line 15: v2 = function int
+Trace line 17: res = function GCD
+Asp runtime error on line 18: '+' undefined for string!

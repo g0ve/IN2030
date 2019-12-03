@@ -6,6 +6,7 @@ import no.uio.ifi.asp.parser.*;
 import java.util.ArrayList;
 
 public class RuntimeFunc extends RuntimeValue {
+	//public ArrayList<RuntimeValue> args = new ArrayList<>();
 	AspFuncDef def;
 	RuntimeScope defScope;
 	String name;
@@ -37,6 +38,7 @@ public class RuntimeFunc extends RuntimeValue {
 
 		for (RuntimeValue v : actualParams) {
 			String id = v.getStringValue("def", where);
+			System.out.println(id);
 			newscope.assign(id, v);
 		}
 
