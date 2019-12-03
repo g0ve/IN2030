@@ -44,6 +44,10 @@ public class RuntimeStringValue extends RuntimeValue {
 			return true;
 		}
 	}
+	@Override
+public long getIntValue(String what, AspSyntax where) {
+	return Integer.parseInt(strValue);
+}
 
 	@Override
 	public RuntimeValue evalLen(AspSyntax where){

@@ -1,4 +1,9 @@
 Trace line 8: def GCD
 Trace line 14: Call function input with params ['A number: ']
 Trace line 14: Call function int with params ['145']
-Asp runtime error on line 14: Type error: int is not an integer!
+Trace line 14: v1 = 145
+Trace line 15: Call function input with params ['Another number: ']
+Trace line 15: Call function int with params ['34']
+Trace line 15: v2 = 34
+Trace line 17: Call function GCD with params [145, 34]
+Asp runtime error on line 17: Type error: def is not a text string!
