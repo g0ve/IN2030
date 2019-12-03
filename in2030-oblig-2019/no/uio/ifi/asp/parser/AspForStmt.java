@@ -63,7 +63,7 @@ public class AspForStmt extends AspCompoundStmt{
 
       v = as.eval(curScope);
     }else{
-      runtimeError("ForStmt - Expr is not a list");
+      RuntimeValue.runtimeError("ForStmt - Expr is not a list", this);
     }
     return v;
   }
