@@ -10,26 +10,33 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 import java.util.ArrayList;
 
 public class AspFuncDef extends AspCompoundStmt{
-    AspName an;
-    AspSuite as;
-    ArrayList<AspName> anLst = new ArrayList<>();
+  AspFuncDef(int n){
+    super(n);
+  }
+  AspSuite as;
+  ArrayList<AspName> anLst = new ArrayList<>();
 
-    AspFuncDef(int n){
-        super(n);
-    }
+  public AspSuite getSuite(){
+    return as;
+  }
+
+  public ArrayList<AspName> getLstName(){
+      return anLst;
+  }
+
+  public ArrayList<AspName> getAspNameList(){
+    return anLst;
+  }
 
   public static AspFuncDef parse(Scanner s){
     enterParser("func def");
-
     AspFuncDef afd = new AspFuncDef(s.curLineNum());
-
     skip(s, defToken);
-    afd.an = AspName.parse(s);
+    afd.anLst.add(AspName.parse(s));
     skip(s, leftParToken);
 
     while(s.curToken().kind != rightParToken){
       afd.anLst.add(AspName.parse(s));
-
       if(s.curToken().kind != commaToken){
         break;
       }
@@ -47,17 +54,14 @@ public class AspFuncDef extends AspCompoundStmt{
   @Override
   public void prettyPrint(){
     prettyWrite("def ");
-    an.prettyPrint();
+    anLst.get(0).prettyPrint();
     prettyWrite(" (");
 
-    int teller = 0;
     for(AspName name : anLst){
-        if(teller > 0) {
+      if(name != anLst.get(anLst.size()-1)) {
             prettyWrite(", ");
         }
-
         name.prettyPrint();
-        ++teller;
     }
 
     prettyWrite(")");
@@ -67,16 +71,14 @@ public class AspFuncDef extends AspCompoundStmt{
 
   @Override
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-      RuntimeFunc rf = new RuntimeFunc(this, curScope, an.getTokenName());
-      trace("def " + an.getTokenName());
+     RuntimeValue v = null;
+     AspName an = anLst.get(0);
 
-     for (AspName an : anLst) {
-         RuntimeValue v = new RuntimeStringValue(an.getTokenName());
-         rf.formalParam.add(v);
-     }
+     v = new RuntimeFunc(this, curScope, an.getTokenName());
 
-     curScope.assign(an.getTokenName(), rf);
-     return rf;
+     curScope.assign(an.getTokenName(), v);
+     trace("def " + v.showInfo());
+     return v;
   }
 
   public void runFunction(RuntimeScope curScope) throws RuntimeReturnValue {
