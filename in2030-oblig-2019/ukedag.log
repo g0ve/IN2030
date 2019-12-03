@@ -4,4 +4,23 @@ Trace line 7: m_navn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Trace line 13: m_num = {}
 Trace line 14: Call function range with params [1, 13]
 Trace line 14: For #0: m = 1
-Asp runtime error on line 14: Type error: sub is not a float!
+Trace line 14: For #1: m = 2
+Trace line 14: For #2: m = 3
+Trace line 14: For #3: m = 4
+Trace line 14: For #4: m = 5
+Trace line 14: For #5: m = 6
+Trace line 14: For #6: m = 7
+Trace line 14: For #7: m = 8
+Trace line 14: For #8: m = 9
+Trace line 14: For #9: m = 10
+Trace line 14: For #10: m = 11
+Trace line 14: For #11: m = 12
+Trace line 18: def finn_maaned
+Trace line 24: def les_maaned
+Trace line 31: def er_skuddaar
+Trace line 35: def finn_m_leng
+Trace line 40: def finn_dag_nr
+Trace line 55: Call function input with params ['Oppgi et Ã¥r: ']
+Trace line 55: Call function int with params ['1998']
+Trace line 55: aar = 1998
+Trace line 56: Call function les_maaned with params null
