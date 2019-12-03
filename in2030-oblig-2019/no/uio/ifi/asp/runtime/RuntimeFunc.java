@@ -8,20 +8,20 @@ import java.util.ArrayList;
 public class RuntimeFunc extends RuntimeValue {
 	public ArrayList<RuntimeValue> formalParam = new ArrayList<>();
 
-	AspFuncDef def;
+	AspFuncDef afd;
 	RuntimeScope defScope;
-	String name;
+	String defId;
 
-	public RuntimeFunc(AspFuncDef def, RuntimeScope defscope, String name){
-    	this.def = def;
-	  	this.defScope = defScope;
-	  	this.name = name;
+	public RuntimeFunc(AspFuncDef def, RuntimeScope rScope, String name){
+    	afd = def;
+	  	defScope = rScope;
+	  	defId = name;
 
     }
 
 	public RuntimeFunc(String name){
-		this.name = name;
-		this.defScope = defScope;
+		defId = name;
+		defScope = defScope;
 
 	}
 
@@ -32,28 +32,28 @@ public class RuntimeFunc extends RuntimeValue {
 
     @Override
     public String toString(){
-      return "function " + name;
+      return "function " + defId;
     }
 
     @Override
     public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
 
-		if(formalParam.size() == actualParams.size()){
-			RuntimeScope newscope = new RuntimeScope(defScope);
+		if(formalParam.size() != actualParams.size()){
+			runtimeError("Error " + defId, where);
+		}
 
-			for (int i = 0; i < formalParam.size(); i++) {
-				RuntimeValue v = actualParams.get(i);
-				String id = formalParam.get(i).getStringValue("function call", where);
-				newscope.assign(id, v);
-			}
+		RuntimeScope newscope = new RuntimeScope(defScope);
 
-			try {
-				def.runFunction(newscope);
-			} catch(RuntimeReturnValue rrv) {
-				return rrv.value;
-			}
-		}else{
-			runtimeError("Error " + name, where);
+		for (int i = 0; i < formalParam.size(); i++) {
+			RuntimeValue v = actualParams.get(i);
+			String id = formalParam.get(i).getStringValue("function call", where);
+			newscope.assign(id, v);
+		}
+
+		try {
+			afd.runFunction(newscope);
+		} catch(RuntimeReturnValue rrv) {
+			return rrv.value;
 		}
 
 		return new RuntimeNoneValue();
