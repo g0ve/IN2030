@@ -61,18 +61,23 @@ public class RuntimeFunc extends RuntimeValue {
 		//System.out.println("dick fick ");
 
 		RuntimeScope newscope = new RuntimeScope(defScope);
+		ArrayList<AspName> anLst = def.getLstName();
 
+		if(anLst.size()-1 == actualParams.size()){
+			for (int i = 0; i < actualParams.size(); i++) {
+				RuntimeValue v = actualParams.get(i);
+				String id = anLst.get(i+1).getTokenName();
+				//System.out.println(id);
+				newscope.assign(id, v);
+			}
 
-		for (RuntimeValue v : actualParams) {
-			String id = v.getStringValue("def", where);
-			//System.out.println(id);
-			newscope.assign(id, v);
-		}
-
-		try {
-			def.getSuite().eval(newscope);
-		} catch(RuntimeReturnValue rrv) {
-			return rrv.value;
+			try {
+				def.getSuite().eval(newscope);
+			} catch(RuntimeReturnValue rrv) {
+				return rrv.value;
+			}
+		}else{
+			runtimeError("Error " + name, where);
 		}
 
 		return new RuntimeNoneValue();
