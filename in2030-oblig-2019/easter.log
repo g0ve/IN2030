@@ -1,2 +1,18 @@
 Trace line 3: M_name = ['', '', '', '', '', '', '', '', '', '', '', '', '']
-Asp runtime error on line 8: Name y not defined!
+Trace line 7: For #0: y = 2017
+Trace line 8: a = 3
+Trace line 9: b = 20.0
+Trace line 10: c = 17
+Trace line 11: d = 5.0
+Trace line 12: e = 0.0
+Trace line 13: f = 1.12
+Trace line 14: g = 6.626666666666666
+Trace line 15: h = 20.373333333333335
+Trace line 16: i = 4.0
+Trace line 17: k = 1
+Trace line 18: l = 4.626666666666665
+Trace line 19: m = 0.7292535107169253
+Trace line 21: month = 4.319200820160694
+Trace line 22: day = 10.895225424981533
+Trace line 23: Call function str with params [10.895225424981533]
+Asp runtime error on line 23: Subscription '[...]' undefined for list!

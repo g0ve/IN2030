@@ -56,12 +56,14 @@ public class AspForStmt extends AspCompoundStmt{
     */
     if(v instanceof RuntimeListValue){
       ArrayList<RuntimeValue> aeLst = v.getListValue("For stmt", this);
+      System.out.println(aeLst);
 
-      for (RuntimeValue rv : aeLst) {
-        curScope.assign(an.toString(), rv);
+      for (int i = 0; i < aeLst.size(); i++) {
+          trace("For #" + i + ": " + an.token.name + " = " + aeLst.get(i).showInfo());
+          curScope.assign(an.token.name, aeLst.get(i));
+          v = as.eval(curScope);
       }
 
-      v = as.eval(curScope);
     }else{
       RuntimeValue.runtimeError("ForStmt - Expr is not a list", this);
     }
