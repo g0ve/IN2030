@@ -2,12 +2,6 @@ Trace line 4: ukedag = ['man', 'tirs', 'ons', 'tors', 'fre', 'lÃ¸r', 'sÃ¸n']
 Trace line 5: m_leng = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 Trace line 7: m_navn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Trace line 13: m_num = {}
-Trace line 18: def finn_maaned
-Trace line 24: def les_maaned
-Trace line 31: def er_skuddaar
-Trace line 35: def finn_m_leng
-Trace line 40: def finn_dag_nr
-Trace line 55: aar = function int
-Trace line 56: maaned = function les_maaned
-Trace line 57: dag = function int
-Asp runtime error on line 58: '+' undefined for int!
+Trace line 14: Call function range with params [1, 13]
+Trace line 14: For #0: m = 1
+Asp runtime error on line 14: Type error: sub is not a float!

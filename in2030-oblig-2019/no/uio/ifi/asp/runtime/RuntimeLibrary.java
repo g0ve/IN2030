@@ -62,7 +62,8 @@ public class RuntimeLibrary extends RuntimeScope {
       assign("range", new RuntimeFunc("range") {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
-          checkNumParams(actualParams, 1, "range", where);
+          checkNumParams(actualParams, 2, "range", where);
+
           long v1 = actualParams.get(0).getIntValue("integer",where);
           long v2 = actualParams.get(1).getIntValue("integer",where);
 
