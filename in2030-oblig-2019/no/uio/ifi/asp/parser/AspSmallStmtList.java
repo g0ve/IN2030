@@ -60,8 +60,11 @@ public class AspSmallStmtList extends AspStmt{
       RuntimeValue v = null;
 
       for (AspSmallStmt ass : assLst) {
-          v = ass.eval(curScope);
-
+          try {
+              v = ass.eval(curScope);
+          } catch(Exception e) {
+              RuntimeValue.runtimeError("Small Stmt List", this);
+          }
       }
 
       return v;
