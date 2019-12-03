@@ -1,9 +1,9 @@
 Trace line 8: def function GCD
 Trace line 14: Call function input with params ['A number: ']
-Trace line 14: Call function int with params ['145']
-Trace line 14: v1 = 145
+Trace line 14: Call function int with params ['455']
+Trace line 14: v1 = 455
 Trace line 15: Call function input with params ['Another number: ']
-Trace line 15: Call function int with params ['23']
-Trace line 15: v2 = 23
-Trace line 17: Call function GCD with params [145, 23]
-Asp runtime error on line 9: Name n not defined!
+Trace line 15: Call function int with params ['3']
+Trace line 15: v2 = 3
+Trace line 17: Call function GCD with params [455, 3]
+Asp runtime error on line 17: Small Stmt List
