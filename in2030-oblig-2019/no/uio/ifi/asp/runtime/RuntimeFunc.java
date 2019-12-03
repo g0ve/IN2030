@@ -48,18 +48,18 @@ public class RuntimeFunc extends RuntimeValue {
 				}else{
 					newscope.assign(anLst.get(i+1).getTokenName(), actualParams.get(i));
 				}
+			}
 
-				try {
-					v = def.getSuite().eval(newscope);
-				} catch(RuntimeReturnValue rrv) {
-					return rrv.value;
-				}
+			try {
+				v = def.getSuite().eval(newscope);
+			} catch(RuntimeReturnValue rrv) {
+				return rrv.value;
 			}
 		}else{
 			runtimeError("Error " + name, where);
 		}
 
-		return new RuntimeNoneValue();
+		return v;
 	}
 
 }
