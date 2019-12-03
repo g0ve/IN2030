@@ -39,7 +39,7 @@ public class RuntimeFunc extends RuntimeValue {
     public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
 
 		if(formalParam.size() != actualParams.size()){
-			runtimeError("Error " + defId, where);
+			runtimeError("Error in " + defId, where);
 		}
 
 		RuntimeScope newscope = new RuntimeScope(defScope);
