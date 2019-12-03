@@ -55,7 +55,8 @@ public class AspForStmt extends AspCompoundStmt{
     også returnerer dere runtimevalue som i alle evalene.
     */
     if(v instanceof RuntimeListValue){
-      ArrayList<RuntimeValue> aeLst = v.getListValue("For stmt", this);
+      ArrayList<RuntimeValue> aeLst = null;
+      //ArrayList<RuntimeValue> aeLst = v.getListValue("For stmt", this);
 
       for (RuntimeValue rv : aeLst) {
         curScope.assign(an.toString(), rv);

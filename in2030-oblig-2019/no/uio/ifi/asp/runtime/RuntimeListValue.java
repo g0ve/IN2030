@@ -30,6 +30,11 @@ public class RuntimeListValue extends RuntimeValue {
 		return String.valueOf(lstValue);
 	}
 
+  public RuntimeValue getElem(int pos){
+  return lstValue.get(pos);
+
+}
+
 
 	@Override
 	public boolean getBoolValue(String what, AspSyntax where) {

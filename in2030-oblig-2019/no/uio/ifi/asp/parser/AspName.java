@@ -14,6 +14,9 @@ public class AspName extends AspAtom {
 		super(n);
     }
 
+	public String getTokenName(){
+		return token.name;
+	}
 
 	public static AspName parse(Scanner s) {
 		enterParser("name");

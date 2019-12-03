@@ -52,7 +52,11 @@ public class RuntimeStringValue extends RuntimeValue {
 
 	@Override
 	public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where){
+		if(v instanceof RuntimeFunc){
+			//System.out.println("BItCH ");
+		}
 		if(v instanceof RuntimeStringValue){
+			//System.out.println("NÅ KOMPIS");
 			return new RuntimeStringValue(strValue + v.getStringValue("+", where));
 		}
 		runtimeError("'+' undefined for "+typeName()+"!", where);

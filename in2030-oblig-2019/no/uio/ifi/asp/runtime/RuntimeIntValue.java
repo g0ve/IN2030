@@ -27,6 +27,7 @@ public class RuntimeIntValue extends RuntimeValue{
 
   @Override
   public long getIntValue(String what, AspSyntax where) {
+    System.out.println("hjer nåp");
     return intValue;
   }
 

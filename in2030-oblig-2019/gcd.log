@@ -1,5 +1,4 @@
 Trace line 8: def GCD
-Trace line 14: v1 = function int
-Trace line 15: v2 = function int
-Trace line 17: res = function GCD
-Asp runtime error on line 18: '+' undefined for string!
+Trace line 14: Call function input with params ['A number: ']
+Trace line 14: Call function int with params ['145']
+Asp runtime error on line 14: Type error: int is not an integer!

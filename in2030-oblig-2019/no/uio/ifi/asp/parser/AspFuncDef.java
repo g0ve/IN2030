@@ -20,6 +20,10 @@ public class AspFuncDef extends AspCompoundStmt{
     return as;
   }
 
+  public ArrayList<AspName> getAspNameList(){
+    return anLst;
+  }
+
   public static AspFuncDef parse(Scanner s){
     enterParser("func def");
     AspFuncDef afd = new AspFuncDef(s.curLineNum());

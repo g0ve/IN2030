@@ -46,18 +46,43 @@ public class AspPrimary extends AspSyntax {
 	@Override
 	public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 		//-- Must be changed in part 3:
+
 		RuntimeValue v = aa.eval(curScope);
-		RuntimeValue apsV = null;
+		ArrayList<RuntimeValue> args;
 
-		for (AspPrimarySuffix aps : apsLst) {
-			apsV = aps.eval(curScope);
 
-			if(aps instanceof AspSubscription){
-				v = v.evalSubscription(apsV, this);
-				trace("Call " + v + " with prarams xxx");
+		for(int i = 0; i<apsLst.size(); i++){
+			//System.out.println(i);
+			if(apsLst.get(i) instanceof AspSubscription){
+				//System.out.println("heuu");
+
+				v = v.evalSubscription(apsLst.get(i).eval(curScope),this);
 			}
-
+			else if(apsLst.get(i) instanceof AspArguments){
+				//System.out.println(apsLst.get(i));
+				args = apsLst.get(i).eval(curScope).getListValue("arguments", this);
+				trace("Call " + v + " with params " + args);
+				//System.out.println("åla");
+				v = v.evalFuncCall(args,this);
+			}
 		}
 		return v;
 	}
+
+
+
+	// 	RuntimeValue v = aa.eval(curScope);
+	// 	RuntimeValue apsV = null;
+	//
+	// 	for (AspPrimarySuffix aps : apsLst) {
+	// 		apsV = aps.eval(curScope);
+	//
+	// 		if(aps instanceof AspSubscription){
+	// 			v = v.evalSubscription(apsV, this);
+	// 			trace("Call " + v + " with prarams xxx");
+	// 		}
+	//
+	// 	}
+	// 	return v;
+	// }
 }

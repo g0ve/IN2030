@@ -25,6 +25,8 @@ public abstract class RuntimeValue {
     }
 
     public long getIntValue(String what, AspSyntax where) {
+    //System.out.println("hjer nåp");
+
 	runtimeError("Type error: "+what+" is not an integer!", where);
 	return 0;  // Required by the compiler!
     }
@@ -32,6 +34,10 @@ public abstract class RuntimeValue {
     public String getStringValue(String what, AspSyntax where) {
 	runtimeError("Type error: "+what+" is not a text string!", where);
 	return null;  // Required by the compiler!
+    }
+    public ArrayList<RuntimeValue> getListValue(String what, AspSyntax where) {
+  runtimeError("Type error: "+what+" is not a list!", where);
+  return null;  // Required by the compiler!
     }
 
     // For part 3:
@@ -137,7 +143,7 @@ public abstract class RuntimeValue {
 	runtimeError("Assigning to an element not allowed for "+typeName()+"!", where);
     }
 
-    public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, 
+    public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams,
 				     AspSyntax where) {
 	runtimeError("'Function call (...)' undefined for "+typeName()+"!", where);
 	return null;  // Required by the compiler!
