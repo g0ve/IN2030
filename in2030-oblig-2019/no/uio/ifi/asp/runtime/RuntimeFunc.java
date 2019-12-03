@@ -6,7 +6,8 @@ import no.uio.ifi.asp.parser.*;
 import java.util.ArrayList;
 
 public class RuntimeFunc extends RuntimeValue {
-	//public ArrayList<RuntimeValue> args = new ArrayList<>();
+	public ArrayList<RuntimeValue> formalParam = new ArrayList<>();
+
 	AspFuncDef def;
 	RuntimeScope defScope;
 	String name;
@@ -35,23 +36,17 @@ public class RuntimeFunc extends RuntimeValue {
     @Override
     public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
 
-		ArrayList<AspName> anLst = def.getLstName();
-		RuntimeValue v = null;
-
-		if(anLst.size()-1 == actualParams.size()){
+		if(formalParam.size() == actualParams.size()){
 			RuntimeScope newscope = new RuntimeScope(defScope);
 
-			for (int i = 0; i < actualParams.size(); i++) {
-				RuntimeValue v2 = defScope.find(actualParams.get(i).toString(), def);
-				if(v2 == null){
-					newscope.assign(anLst.get(i+1).getTokenName(), v2);
-				}else{
-					newscope.assign(anLst.get(i+1).getTokenName(), actualParams.get(i));
-				}
+			for (int i = 0; i < formalParam.size(); i++) {
+				RuntimeValue v = actualParams.get(i);
+				String id = formalParam.get(i).getStringValue("function call", where);
+				newscope.assign(id, v);
 			}
 
 			try {
-				v = def.getSuite().eval(newscope);
+				def.runFunction(newscope);
 			} catch(RuntimeReturnValue rrv) {
 				return rrv.value;
 			}
