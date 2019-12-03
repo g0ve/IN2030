@@ -40,6 +40,15 @@ public class RuntimeListValue extends RuntimeValue {
 		}
 	}
 
+  @Override
+  public boolean getListValue(String what, AspSyntax where) {
+    if(lstValue.isEmpty()){
+      return null;
+    }else{
+      return lstValue;
+    }
+  }
+
 	@Override
 	public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where){
 		ArrayList<RuntimeValue> tmpLst = new ArrayList<>();
