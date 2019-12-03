@@ -20,6 +20,8 @@ public class RuntimeFunc extends RuntimeValue {
 
 	public RuntimeFunc(String name){
 		this.name = name;
+		this.defScope = defScope;
+
 	}
 
     @Override
@@ -35,13 +37,35 @@ public class RuntimeFunc extends RuntimeValue {
     @Override
     public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
 
+		// 	int fP = def.getAspNameList().size()-1;
+		//
+		// 	if(fP == actualParams.size()){
+		// 		RuntimeScope scope = new RuntimeScope(defScope);
+		//
+		// 		for(int i = 0; i<actualParams.size(); i++){
+		// 			scope.assign(def.getAspNameList().get(i+1).getTokenName(), actualParams.get(i));
+		// 		}
+		// 		try{
+		// 			def.getSuite().eval(scope);
+		// 		}catch(RuntimeReturnValue rrv){
+		// 			return rrv.value;
+		// 		}
+		// 	}
+		// 	else{
+		// 		RuntimeValue.runtimeError("Wrong " + name + "!", where);
+		// 	}
+		// 	return null;
+		// }
+
+
+		//System.out.println("dick fick ");
+
+		RuntimeScope newscope = new RuntimeScope(defScope);
 		ArrayList<AspName> anLst = def.getLstName();
-		RuntimeValue v = null;
 
 		if(anLst.size()-1 == actualParams.size()){
-			RuntimeScope newscope = new RuntimeScope(defScope);
-
 			for (int i = 0; i < actualParams.size(); i++) {
+<<<<<<< HEAD
 				RuntimeValue v2 = defScope.find(actualParams.get(i).toString(), def);
 				if(v2 == null){
 					newscope.assign(anLst.get(i+1).getTokenName(), v2);
@@ -52,6 +76,16 @@ public class RuntimeFunc extends RuntimeValue {
 
 			try {
 				v = def.getSuite().eval(newscope);
+=======
+				RuntimeValue v = actualParams.get(i);
+				String id = anLst.get(i+1).getTokenName();
+				//System.out.println(id);
+				newscope.assign(id, v);
+			}
+
+			try {
+				def.getSuite().eval(newscope);
+>>>>>>> parent of c82c9dc... func
 			} catch(RuntimeReturnValue rrv) {
 				return rrv.value;
 			}
