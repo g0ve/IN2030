@@ -20,10 +20,6 @@ public class AspFuncDef extends AspCompoundStmt{
     return as;
   }
 
-  public ArrayList<AspName> getLstName(){
-      return anLst;
-  }
-
   public ArrayList<AspName> getAspNameList(){
     return anLst;
   }
