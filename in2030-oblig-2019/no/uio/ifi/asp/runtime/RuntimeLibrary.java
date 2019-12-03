@@ -26,7 +26,7 @@ public class RuntimeLibrary extends RuntimeScope {
         @Override
         public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
           checkNumParams(actualParams, 1, "input", where);
-          //print ?
+          System.out.println(actualParams.get(0));
           return new RuntimeStringValue(keyboard.nextLine());
         }});
 

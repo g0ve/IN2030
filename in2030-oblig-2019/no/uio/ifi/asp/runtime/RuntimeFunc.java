@@ -58,16 +58,13 @@ public class RuntimeFunc extends RuntimeValue {
 		// }
 
 
-		//System.out.println("dick fick ");
-
-		RuntimeScope newscope = new RuntimeScope(defScope);
 		ArrayList<AspName> anLst = def.getLstName();
 
 		if(anLst.size()-1 == actualParams.size()){
+			RuntimeScope newscope = new RuntimeScope(defScope);
 			for (int i = 0; i < actualParams.size(); i++) {
 				RuntimeValue v = actualParams.get(i);
-				String id = anLst.get(i+1).getTokenName();
-				//System.out.println(id);
+				String id = anLst.get(i + 1).getTokenName();
 				newscope.assign(id, v);
 			}
 
