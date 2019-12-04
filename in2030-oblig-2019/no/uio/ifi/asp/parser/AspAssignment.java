@@ -89,6 +89,7 @@ public class AspAssignment extends AspSmallStmt{
 
       AspSubscription lastSub = asLst.get(lenght-1);
       RuntimeValue lastIndex = lastSub.eval(curScope);
+      trace(an.token.name +"[" + lastIndex + "] = " + exprValue);
       v.evalAssignElem(lastIndex, exprValue, this);
 
     }

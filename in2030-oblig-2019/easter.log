@@ -1,4 +1,6 @@
 Trace line 3: M_name = ['', '', '', '', '', '', '', '', '', '', '', '', '']
+Trace line 4: M_name[3] = 'mars'
+Trace line 5: M_name[4] = 'april'
 Trace line 7: For #0: y = 2017
 Trace line 8: a = 3
 Trace line 9: b = 20
