@@ -77,7 +77,7 @@ public class AspComparison extends AspSyntax {
 				v = v.evalGreaterEqual(atLst.get(i).eval(curScope), this);
 			}
 			else if(t == TokenKind.lessEqualToken){
-				v = v.evalLess(atLst.get(i).eval(curScope), this);
+				v = v.evalLessEqual(atLst.get(i).eval(curScope), this);
 			}
 			else if(t == TokenKind.notEqualToken){
 				v = v.evalNotEqual(atLst.get(i).eval(curScope), this);

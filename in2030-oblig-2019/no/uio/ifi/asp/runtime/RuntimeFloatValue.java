@@ -100,7 +100,7 @@ public class RuntimeFloatValue extends RuntimeValue{
   }
 
   @Override
-  public RuntimeValue evalLessEqual(RuntimeValue v, AspSyntax where) {
+  public RuntimeValue evalLessEqual(RuntimeValue v, AspSyntax where) {      
     if (v instanceof RuntimeIntValue) {
       return new RuntimeBoolValue(floatValue <= v.getIntValue("<=", where));
     }

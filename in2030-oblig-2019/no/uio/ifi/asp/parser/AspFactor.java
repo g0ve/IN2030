@@ -101,6 +101,7 @@ public class AspFactor extends AspSyntax {
 				}
 				else if(to == TokenKind.percentToken){
 					v = v.evalModulo(apLst.get(i).eval(curScope), this);
+					// System.out.print(v.toString());
 				}
 				else{
 					Main.panic("Do not understand: " + to);
