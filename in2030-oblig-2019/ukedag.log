@@ -1,3 +1,557 @@
+   1: # Program som ber brukeren oppgi en dato og
+   2: # skriver ut hvilken ukedag den faller pÃ¥.
+   3: 
+   4: ukedag = ["man", "tirs", "ons", "tors", "fre", "lÃ¸r", "sÃ¸n"]
+Scanner: name token on line 4: ukedag
+Scanner: = token on line 4
+Scanner: [ token on line 4
+Scanner: string literal token on line 4: "man"
+Scanner: , token on line 4
+Scanner: string literal token on line 4: "tirs"
+Scanner: , token on line 4
+Scanner: string literal token on line 4: "ons"
+Scanner: , token on line 4
+Scanner: string literal token on line 4: "tors"
+Scanner: , token on line 4
+Scanner: string literal token on line 4: "fre"
+Scanner: , token on line 4
+Scanner: string literal token on line 4: "lÃ¸r"
+Scanner: , token on line 4
+Scanner: string literal token on line 4: "sÃ¸n"
+Scanner: ] token on line 4
+Scanner: NEWLINE token on line 4
+   5: m_leng = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+Scanner: name token on line 5: m_leng
+Scanner: = token on line 5
+Scanner: [ token on line 5
+Scanner: integer literal token on line 5: 0
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 31
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 28
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 31
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 30
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 31
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 30
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 31
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 31
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 30
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 31
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 30
+Scanner: , token on line 5
+Scanner: integer literal token on line 5: 31
+Scanner: ] token on line 5
+Scanner: NEWLINE token on line 5
+   6: 
+   7: m_navn = [0]*(12+1)
+Scanner: name token on line 7: m_navn
+Scanner: = token on line 7
+Scanner: [ token on line 7
+Scanner: integer literal token on line 7: 0
+Scanner: ] token on line 7
+Scanner: * token on line 7
+Scanner: ( token on line 7
+Scanner: integer literal token on line 7: 12
+Scanner: + token on line 7
+Scanner: integer literal token on line 7: 1
+Scanner: ) token on line 7
+Scanner: NEWLINE token on line 7
+   8: m_navn[ 1] = "januar";  m_navn[ 2] = "februar";  m_navn[ 3] = "mars";
+Scanner: name token on line 8: m_navn
+Scanner: [ token on line 8
+Scanner: integer literal token on line 8: 1
+Scanner: ] token on line 8
+Scanner: = token on line 8
+Scanner: string literal token on line 8: "januar"
+Scanner: ; token on line 8
+Scanner: name token on line 8: m_navn
+Scanner: [ token on line 8
+Scanner: integer literal token on line 8: 2
+Scanner: ] token on line 8
+Scanner: = token on line 8
+Scanner: string literal token on line 8: "februar"
+Scanner: ; token on line 8
+Scanner: name token on line 8: m_navn
+Scanner: [ token on line 8
+Scanner: integer literal token on line 8: 3
+Scanner: ] token on line 8
+Scanner: = token on line 8
+Scanner: string literal token on line 8: "mars"
+Scanner: ; token on line 8
+Scanner: NEWLINE token on line 8
+   9: m_navn[ 4] = "april";   m_navn[ 5] = "mai";      m_navn[ 6] = "juni";
+Scanner: name token on line 9: m_navn
+Scanner: [ token on line 9
+Scanner: integer literal token on line 9: 4
+Scanner: ] token on line 9
+Scanner: = token on line 9
+Scanner: string literal token on line 9: "april"
+Scanner: ; token on line 9
+Scanner: name token on line 9: m_navn
+Scanner: [ token on line 9
+Scanner: integer literal token on line 9: 5
+Scanner: ] token on line 9
+Scanner: = token on line 9
+Scanner: string literal token on line 9: "mai"
+Scanner: ; token on line 9
+Scanner: name token on line 9: m_navn
+Scanner: [ token on line 9
+Scanner: integer literal token on line 9: 6
+Scanner: ] token on line 9
+Scanner: = token on line 9
+Scanner: string literal token on line 9: "juni"
+Scanner: ; token on line 9
+Scanner: NEWLINE token on line 9
+  10: m_navn[ 7] = "juli";    m_navn[ 8] = "august";   m_navn[ 9] = "september";
+Scanner: name token on line 10: m_navn
+Scanner: [ token on line 10
+Scanner: integer literal token on line 10: 7
+Scanner: ] token on line 10
+Scanner: = token on line 10
+Scanner: string literal token on line 10: "juli"
+Scanner: ; token on line 10
+Scanner: name token on line 10: m_navn
+Scanner: [ token on line 10
+Scanner: integer literal token on line 10: 8
+Scanner: ] token on line 10
+Scanner: = token on line 10
+Scanner: string literal token on line 10: "august"
+Scanner: ; token on line 10
+Scanner: name token on line 10: m_navn
+Scanner: [ token on line 10
+Scanner: integer literal token on line 10: 9
+Scanner: ] token on line 10
+Scanner: = token on line 10
+Scanner: string literal token on line 10: "september"
+Scanner: ; token on line 10
+Scanner: NEWLINE token on line 10
+  11: m_navn[10] = "oktober"; m_navn[11] = "november"; m_navn[12] = "desember";
+Scanner: name token on line 11: m_navn
+Scanner: [ token on line 11
+Scanner: integer literal token on line 11: 10
+Scanner: ] token on line 11
+Scanner: = token on line 11
+Scanner: string literal token on line 11: "oktober"
+Scanner: ; token on line 11
+Scanner: name token on line 11: m_navn
+Scanner: [ token on line 11
+Scanner: integer literal token on line 11: 11
+Scanner: ] token on line 11
+Scanner: = token on line 11
+Scanner: string literal token on line 11: "november"
+Scanner: ; token on line 11
+Scanner: name token on line 11: m_navn
+Scanner: [ token on line 11
+Scanner: integer literal token on line 11: 12
+Scanner: ] token on line 11
+Scanner: = token on line 11
+Scanner: string literal token on line 11: "desember"
+Scanner: ; token on line 11
+Scanner: NEWLINE token on line 11
+  12: 
+  13: m_num = {}
+Scanner: name token on line 13: m_num
+Scanner: = token on line 13
+Scanner: { token on line 13
+Scanner: } token on line 13
+Scanner: NEWLINE token on line 13
+  14: for m in range(1,12+1): m_num[m_navn[m]] = m
+Scanner: for token on line 14
+Scanner: name token on line 14: m
+Scanner: in token on line 14
+Scanner: name token on line 14: range
+Scanner: ( token on line 14
+Scanner: integer literal token on line 14: 1
+Scanner: , token on line 14
+Scanner: integer literal token on line 14: 12
+Scanner: + token on line 14
+Scanner: integer literal token on line 14: 1
+Scanner: ) token on line 14
+Scanner: : token on line 14
+Scanner: name token on line 14: m_num
+Scanner: [ token on line 14
+Scanner: name token on line 14: m_navn
+Scanner: [ token on line 14
+Scanner: name token on line 14: m
+Scanner: ] token on line 14
+Scanner: ] token on line 14
+Scanner: = token on line 14
+Scanner: name token on line 14: m
+Scanner: NEWLINE token on line 14
+  15: 
+  16: # Gitt et mÃ¥nedsnavn, finn mÃ¥nedens nummer.
+  17: # Svar 0 om det ikke er et lovlig mÃ¥nedsnavn.
+  18: def finn_maaned (m_id):
+Scanner: def token on line 18
+Scanner: name token on line 18: finn_maaned
+Scanner: ( token on line 18
+Scanner: name token on line 18: m_id
+Scanner: ) token on line 18
+Scanner: : token on line 18
+Scanner: NEWLINE token on line 18
+  19:    for m_ix in range(1,len(m_navn)):
+Scanner: INDENT token on line 19
+Scanner: for token on line 19
+Scanner: name token on line 19: m_ix
+Scanner: in token on line 19
+Scanner: name token on line 19: range
+Scanner: ( token on line 19
+Scanner: integer literal token on line 19: 1
+Scanner: , token on line 19
+Scanner: name token on line 19: len
+Scanner: ( token on line 19
+Scanner: name token on line 19: m_navn
+Scanner: ) token on line 19
+Scanner: ) token on line 19
+Scanner: : token on line 19
+Scanner: NEWLINE token on line 19
+  20:       if m_navn[m_ix] == m_id: return m_ix
+Scanner: INDENT token on line 20
+Scanner: if token on line 20
+Scanner: name token on line 20: m_navn
+Scanner: [ token on line 20
+Scanner: name token on line 20: m_ix
+Scanner: ] token on line 20
+Scanner: == token on line 20
+Scanner: name token on line 20: m_id
+Scanner: : token on line 20
+Scanner: return token on line 20
+Scanner: name token on line 20: m_ix
+Scanner: NEWLINE token on line 20
+  21:    return 0
+Scanner: DEDENT token on line 21
+Scanner: return token on line 21
+Scanner: integer literal token on line 21: 0
+Scanner: NEWLINE token on line 21
+  22: 
+  23: # Les et mÃ¥nedsnavn; fortsett til lovlig navn.
+  24: def les_maaned ():
+Scanner: DEDENT token on line 24
+Scanner: def token on line 24
+Scanner: name token on line 24: les_maaned
+Scanner: ( token on line 24
+Scanner: ) token on line 24
+Scanner: : token on line 24
+Scanner: NEWLINE token on line 24
+  25:    while True:
+Scanner: INDENT token on line 25
+Scanner: while token on line 25
+Scanner: True token on line 25
+Scanner: : token on line 25
+Scanner: NEWLINE token on line 25
+  26:       m_id = input("Oppgi en mÃ¥ned: ")
+Scanner: INDENT token on line 26
+Scanner: name token on line 26: m_id
+Scanner: = token on line 26
+Scanner: name token on line 26: input
+Scanner: ( token on line 26
+Scanner: string literal token on line 26: "Oppgi en mÃ¥ned: "
+Scanner: ) token on line 26
+Scanner: NEWLINE token on line 26
+  27:       if (finn_maaned(m_id)): return m_num[m_id]
+Scanner: if token on line 27
+Scanner: ( token on line 27
+Scanner: name token on line 27: finn_maaned
+Scanner: ( token on line 27
+Scanner: name token on line 27: m_id
+Scanner: ) token on line 27
+Scanner: ) token on line 27
+Scanner: : token on line 27
+Scanner: return token on line 27
+Scanner: name token on line 27: m_num
+Scanner: [ token on line 27
+Scanner: name token on line 27: m_id
+Scanner: ] token on line 27
+Scanner: NEWLINE token on line 27
+  28:       print("Ulovlig mÃ¥ned!")
+Scanner: name token on line 28: print
+Scanner: ( token on line 28
+Scanner: string literal token on line 28: "Ulovlig mÃ¥ned!"
+Scanner: ) token on line 28
+Scanner: NEWLINE token on line 28
+  29: 
+  30: # Er angitte Ã¥r et skuddÃ¥r?
+  31: def er_skuddaar (aa):
+Scanner: DEDENT token on line 31
+Scanner: DEDENT token on line 31
+Scanner: def token on line 31
+Scanner: name token on line 31: er_skuddaar
+Scanner: ( token on line 31
+Scanner: name token on line 31: aa
+Scanner: ) token on line 31
+Scanner: : token on line 31
+Scanner: NEWLINE token on line 31
+  32:    return aa%4==0 and aa%100 or aa%400==0
+Scanner: INDENT token on line 32
+Scanner: return token on line 32
+Scanner: name token on line 32: aa
+Scanner: % token on line 32
+Scanner: integer literal token on line 32: 4
+Scanner: == token on line 32
+Scanner: integer literal token on line 32: 0
+Scanner: and token on line 32
+Scanner: name token on line 32: aa
+Scanner: % token on line 32
+Scanner: integer literal token on line 32: 100
+Scanner: or token on line 32
+Scanner: name token on line 32: aa
+Scanner: % token on line 32
+Scanner: integer literal token on line 32: 400
+Scanner: == token on line 32
+Scanner: integer literal token on line 32: 0
+Scanner: NEWLINE token on line 32
+  33: 
+  34: # Beregn antall dager i en gitt mÃ¥ned i et gitt Ã¥r.
+  35: def finn_m_leng (m, aa):
+Scanner: DEDENT token on line 35
+Scanner: def token on line 35
+Scanner: name token on line 35: finn_m_leng
+Scanner: ( token on line 35
+Scanner: name token on line 35: m
+Scanner: , token on line 35
+Scanner: name token on line 35: aa
+Scanner: ) token on line 35
+Scanner: : token on line 35
+Scanner: NEWLINE token on line 35
+  36:    if m==2 and er_skuddaar(aa): return 29
+Scanner: INDENT token on line 36
+Scanner: if token on line 36
+Scanner: name token on line 36: m
+Scanner: == token on line 36
+Scanner: integer literal token on line 36: 2
+Scanner: and token on line 36
+Scanner: name token on line 36: er_skuddaar
+Scanner: ( token on line 36
+Scanner: name token on line 36: aa
+Scanner: ) token on line 36
+Scanner: : token on line 36
+Scanner: return token on line 36
+Scanner: integer literal token on line 36: 29
+Scanner: NEWLINE token on line 36
+  37:    return m_leng[m]
+Scanner: return token on line 37
+Scanner: name token on line 37: m_leng
+Scanner: [ token on line 37
+Scanner: name token on line 37: m
+Scanner: ] token on line 37
+Scanner: NEWLINE token on line 37
+  38: 
+  39: # Beregn antall dager fra 1. januar 1900 til angitt dato:
+  40: def finn_dag_nr (aa, m, d):
+Scanner: DEDENT token on line 40
+Scanner: def token on line 40
+Scanner: name token on line 40: finn_dag_nr
+Scanner: ( token on line 40
+Scanner: name token on line 40: aa
+Scanner: , token on line 40
+Scanner: name token on line 40: m
+Scanner: , token on line 40
+Scanner: name token on line 40: d
+Scanner: ) token on line 40
+Scanner: : token on line 40
+Scanner: NEWLINE token on line 40
+  41:    d_nr = 0
+Scanner: INDENT token on line 41
+Scanner: name token on line 41: d_nr
+Scanner: = token on line 41
+Scanner: integer literal token on line 41: 0
+Scanner: NEWLINE token on line 41
+  42: 
+  43:    # Tell dagene i Ã¥rene fÃ¸r angitte dato:
+  44:    for aax in range(1900,aa):
+Scanner: for token on line 44
+Scanner: name token on line 44: aax
+Scanner: in token on line 44
+Scanner: name token on line 44: range
+Scanner: ( token on line 44
+Scanner: integer literal token on line 44: 1900
+Scanner: , token on line 44
+Scanner: name token on line 44: aa
+Scanner: ) token on line 44
+Scanner: : token on line 44
+Scanner: NEWLINE token on line 44
+  45:       d_nr = d_nr + 365;
+Scanner: INDENT token on line 45
+Scanner: name token on line 45: d_nr
+Scanner: = token on line 45
+Scanner: name token on line 45: d_nr
+Scanner: + token on line 45
+Scanner: integer literal token on line 45: 365
+Scanner: ; token on line 45
+Scanner: NEWLINE token on line 45
+  46:       if er_skuddaar(aax): d_nr = d_nr + 1
+Scanner: if token on line 46
+Scanner: name token on line 46: er_skuddaar
+Scanner: ( token on line 46
+Scanner: name token on line 46: aax
+Scanner: ) token on line 46
+Scanner: : token on line 46
+Scanner: name token on line 46: d_nr
+Scanner: = token on line 46
+Scanner: name token on line 46: d_nr
+Scanner: + token on line 46
+Scanner: integer literal token on line 46: 1
+Scanner: NEWLINE token on line 46
+  47: 
+  48:    # Tell dagene i mÃ¥nedene fÃ¸r:
+  49:    for mx in range(1,m):
+Scanner: DEDENT token on line 49
+Scanner: for token on line 49
+Scanner: name token on line 49: mx
+Scanner: in token on line 49
+Scanner: name token on line 49: range
+Scanner: ( token on line 49
+Scanner: integer literal token on line 49: 1
+Scanner: , token on line 49
+Scanner: name token on line 49: m
+Scanner: ) token on line 49
+Scanner: : token on line 49
+Scanner: NEWLINE token on line 49
+  50:       d_nr = d_nr + finn_m_leng(mx,aa)
+Scanner: INDENT token on line 50
+Scanner: name token on line 50: d_nr
+Scanner: = token on line 50
+Scanner: name token on line 50: d_nr
+Scanner: + token on line 50
+Scanner: name token on line 50: finn_m_leng
+Scanner: ( token on line 50
+Scanner: name token on line 50: mx
+Scanner: , token on line 50
+Scanner: name token on line 50: aa
+Scanner: ) token on line 50
+Scanner: NEWLINE token on line 50
+  51: 
+  52:    return d_nr + d
+Scanner: DEDENT token on line 52
+Scanner: return token on line 52
+Scanner: name token on line 52: d_nr
+Scanner: + token on line 52
+Scanner: name token on line 52: d
+Scanner: NEWLINE token on line 52
+  53: 
+  54: # Hovedprogrammet:
+  55: aar = int(input("Oppgi et Ã¥r: "))
+Scanner: DEDENT token on line 55
+Scanner: name token on line 55: aar
+Scanner: = token on line 55
+Scanner: name token on line 55: int
+Scanner: ( token on line 55
+Scanner: name token on line 55: input
+Scanner: ( token on line 55
+Scanner: string literal token on line 55: "Oppgi et Ã¥r: "
+Scanner: ) token on line 55
+Scanner: ) token on line 55
+Scanner: NEWLINE token on line 55
+  56: maaned = les_maaned()
+Scanner: name token on line 56: maaned
+Scanner: = token on line 56
+Scanner: name token on line 56: les_maaned
+Scanner: ( token on line 56
+Scanner: ) token on line 56
+Scanner: NEWLINE token on line 56
+  57: dag = int(input("Oppgi en dag: "))
+Scanner: name token on line 57: dag
+Scanner: = token on line 57
+Scanner: name token on line 57: int
+Scanner: ( token on line 57
+Scanner: name token on line 57: input
+Scanner: ( token on line 57
+Scanner: string literal token on line 57: "Oppgi en dag: "
+Scanner: ) token on line 57
+Scanner: ) token on line 57
+Scanner: NEWLINE token on line 57
+  58: u_dag = ukedag[(6+finn_dag_nr(aar,maaned,dag))%7] + "dag"
+Scanner: name token on line 58: u_dag
+Scanner: = token on line 58
+Scanner: name token on line 58: ukedag
+Scanner: [ token on line 58
+Scanner: ( token on line 58
+Scanner: integer literal token on line 58: 6
+Scanner: + token on line 58
+Scanner: name token on line 58: finn_dag_nr
+Scanner: ( token on line 58
+Scanner: name token on line 58: aar
+Scanner: , token on line 58
+Scanner: name token on line 58: maaned
+Scanner: , token on line 58
+Scanner: name token on line 58: dag
+Scanner: ) token on line 58
+Scanner: ) token on line 58
+Scanner: % token on line 58
+Scanner: integer literal token on line 58: 7
+Scanner: ] token on line 58
+Scanner: + token on line 58
+Scanner: string literal token on line 58: "dag"
+Scanner: NEWLINE token on line 58
+  59: print(str(dag)+".", m_navn[maaned], aar, "er en", u_dag)
+Scanner: name token on line 59: print
+Scanner: ( token on line 59
+Scanner: name token on line 59: str
+Scanner: ( token on line 59
+Scanner: name token on line 59: dag
+Scanner: ) token on line 59
+Scanner: + token on line 59
+Scanner: string literal token on line 59: "."
+Scanner: , token on line 59
+Scanner: name token on line 59: m_navn
+Scanner: [ token on line 59
+Scanner: name token on line 59: maaned
+Scanner: ] token on line 59
+Scanner: , token on line 59
+Scanner: name token on line 59: aar
+Scanner: , token on line 59
+Scanner: string literal token on line 59: "er en"
+Scanner: , token on line 59
+Scanner: name token on line 59: u_dag
+Scanner: ) token on line 59
+Scanner: NEWLINE token on line 59
+Scanner: E-o-f token
+
+ukedag = ["man", "tirs", "ons", "tors", "fre", "lÃ¸r", "sÃ¸n"]
+m_leng = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+m_navn = [0] * (12 + 1)
+m_navn[1] = "januar"; m_navn[2] = "februar"; m_navn[3] = "mars"
+m_navn[4] = "april"; m_navn[5] = "mai"; m_navn[6] = "juni"
+m_navn[7] = "juli"; m_navn[8] = "august"; m_navn[9] = "september"
+m_navn[10] = "oktober"; m_navn[11] = "november"; m_navn[12] = "desember"
+m_num = {}
+for m in range(1, 12 + 1):m_num[m_navn[m]] = m
+def finn_maaned (m_id):
+  for m_ix in range(1, len(m_navn)):
+    if m_navn[m_ix] == m_id: return m_ix
+  return 0
+def les_maaned ():
+  while True:
+    m_id = input("Oppgi en mÃ¥ned: ")
+    if (finn_maaned(m_id)): return m_num[m_id]
+    print("Ulovlig mÃ¥ned!")
+def er_skuddaar (aa):
+  return aa % 4 == 0 and aa % 100 or aa % 400 == 0
+def finn_m_leng (m, aa):
+  if m == 2 and er_skuddaar(aa): return 29
+  return m_leng[m]
+def finn_dag_nr (aa, m, d):
+  d_nr = 0
+  for aax in range(1900, aa):
+    d_nr = d_nr + 365
+    if er_skuddaar(aax): d_nr = d_nr + 1
+  for mx in range(1, m):
+    d_nr = d_nr + finn_m_leng(mx, aa)
+  return d_nr + d
+aar = int(input("Oppgi et Ã¥r: "))
+maaned = les_maaned()
+dag = int(input("Oppgi en dag: "))
+u_dag = ukedag[(6 + finn_dag_nr(aar, maaned, dag)) % 7] + "dag"
+print(str(dag) + ".", m_navn[maaned], aar, "er en", u_dag)
 Trace line 4: ukedag = [man, tirs, ons, tors, fre, lÃ¸r, sÃ¸n]
 Trace line 5: m_leng = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 Trace line 7: m_navn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -37,6 +591,8 @@ Trace line 14: for #10: m = 10
 Trace line 14: m_num[oktober] = 10
 Trace line 14: for #11: m = 11
 Trace line 14: m_num[november] = 11
+Trace line 14: for #12: m = 12
+Trace line 14: m_num[desember] = 12
 Trace line 18: def finn_maaned
 Trace line 24: def les_maaned
 Trace line 31: def er_skuddaar
@@ -48,8 +604,8 @@ Trace line 55: aar = 1998
 Trace line 56: Call function les_maaned with params null
 Trace line 25: while True: ...
 Trace line 26: Call function input with params [Oppgi en mÃ¥ned: ]
-Trace line 26: m_id = 12
-Trace line 27: Call function finn_maaned with params [12]
+Trace line 26: m_id = juni
+Trace line 27: Call function finn_maaned with params [juni]
 Trace line 19: Call function len with params [[0, januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]]
 Trace line 19: Call function range with params [1, 13]
 Trace line 19: for #1: m_ix = 1
@@ -58,74 +614,483 @@ Trace line 19: for #3: m_ix = 3
 Trace line 19: for #4: m_ix = 4
 Trace line 19: for #5: m_ix = 5
 Trace line 19: for #6: m_ix = 6
-Trace line 19: for #7: m_ix = 7
-Trace line 19: for #8: m_ix = 8
-Trace line 19: for #9: m_ix = 9
-Trace line 19: for #10: m_ix = 10
-Trace line 19: for #11: m_ix = 11
-Trace line 21: return 0
-Trace line 28: Call function print with params [Ulovlig mÃ¥ned!]
-Trace line 28: None
-Trace line 25: while True: ...
-Trace line 26: Call function input with params [Oppgi en mÃ¥ned: ]
-Trace line 26: m_id = desember
-Trace line 27: Call function finn_maaned with params [desember]
-Trace line 19: Call function len with params [[0, januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]]
-Trace line 19: Call function range with params [1, 13]
-Trace line 19: for #1: m_ix = 1
-Trace line 19: for #2: m_ix = 2
-Trace line 19: for #3: m_ix = 3
-Trace line 19: for #4: m_ix = 4
-Trace line 19: for #5: m_ix = 5
-Trace line 19: for #6: m_ix = 6
-Trace line 19: for #7: m_ix = 7
-Trace line 19: for #8: m_ix = 8
-Trace line 19: for #9: m_ix = 9
-Trace line 19: for #10: m_ix = 10
-Trace line 19: for #11: m_ix = 11
-Trace line 21: return 0
-Trace line 28: Call function print with params [Ulovlig mÃ¥ned!]
-Trace line 28: None
-Trace line 25: while True: ...
-Trace line 26: Call function input with params [Oppgi en mÃ¥ned: ]
-Trace line 26: m_id = desember
-Trace line 27: Call function finn_maaned with params [desember]
-Trace line 19: Call function len with params [[0, januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]]
-Trace line 19: Call function range with params [1, 13]
-Trace line 19: for #1: m_ix = 1
-Trace line 19: for #2: m_ix = 2
-Trace line 19: for #3: m_ix = 3
-Trace line 19: for #4: m_ix = 4
-Trace line 19: for #5: m_ix = 5
-Trace line 19: for #6: m_ix = 6
-Trace line 19: for #7: m_ix = 7
-Trace line 19: for #8: m_ix = 8
-Trace line 19: for #9: m_ix = 9
-Trace line 19: for #10: m_ix = 10
-Trace line 19: for #11: m_ix = 11
-Trace line 21: return 0
-Trace line 28: Call function print with params [Ulovlig mÃ¥ned!]
-Trace line 28: None
-Trace line 25: while True: ...
-Trace line 26: Call function input with params [Oppgi en mÃ¥ned: ]
-Trace line 26: m_id = november
-Trace line 27: Call function finn_maaned with params [november]
-Trace line 19: Call function len with params [[0, januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]]
-Trace line 19: Call function range with params [1, 13]
-Trace line 19: for #1: m_ix = 1
-Trace line 19: for #2: m_ix = 2
-Trace line 19: for #3: m_ix = 3
-Trace line 19: for #4: m_ix = 4
-Trace line 19: for #5: m_ix = 5
-Trace line 19: for #6: m_ix = 6
-Trace line 19: for #7: m_ix = 7
-Trace line 19: for #8: m_ix = 8
-Trace line 19: for #9: m_ix = 9
-Trace line 19: for #10: m_ix = 10
-Trace line 19: for #11: m_ix = 11
 Trace line 20: if True alt #1: ...
-Trace line 20: return 11
+Trace line 20: return 6
 Trace line 27: if True alt #1: ...
-Trace line 27: return 11
-Trace line 56: maaned = 11
+Trace line 27: return 6
+Trace line 56: maaned = 6
 Trace line 57: Call function input with params [Oppgi en dag: ]
+Trace line 57: Call function int with params [23]
+Trace line 57: dag = 23
+Trace line 58: Call function finn_dag_nr with params [1998, 6, 23]
+Trace line 41: d_nr = 0
+Trace line 44: Call function range with params [1900, 1998]
+Trace line 44: for #1: aax = 1900
+Trace line 45: d_nr = 365
+Trace line 46: Call function er_skuddaar with params [1900]
+Trace line 32: return False
+Trace line 44: for #2: aax = 1901
+Trace line 45: d_nr = 730
+Trace line 46: Call function er_skuddaar with params [1901]
+Trace line 32: return False
+Trace line 44: for #3: aax = 1902
+Trace line 45: d_nr = 1095
+Trace line 46: Call function er_skuddaar with params [1902]
+Trace line 32: return False
+Trace line 44: for #4: aax = 1903
+Trace line 45: d_nr = 1460
+Trace line 46: Call function er_skuddaar with params [1903]
+Trace line 32: return False
+Trace line 44: for #5: aax = 1904
+Trace line 45: d_nr = 1825
+Trace line 46: Call function er_skuddaar with params [1904]
+Trace line 32: return 4
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 1826
+Trace line 44: for #6: aax = 1905
+Trace line 45: d_nr = 2191
+Trace line 46: Call function er_skuddaar with params [1905]
+Trace line 32: return False
+Trace line 44: for #7: aax = 1906
+Trace line 45: d_nr = 2556
+Trace line 46: Call function er_skuddaar with params [1906]
+Trace line 32: return False
+Trace line 44: for #8: aax = 1907
+Trace line 45: d_nr = 2921
+Trace line 46: Call function er_skuddaar with params [1907]
+Trace line 32: return False
+Trace line 44: for #9: aax = 1908
+Trace line 45: d_nr = 3286
+Trace line 46: Call function er_skuddaar with params [1908]
+Trace line 32: return 8
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 3287
+Trace line 44: for #10: aax = 1909
+Trace line 45: d_nr = 3652
+Trace line 46: Call function er_skuddaar with params [1909]
+Trace line 32: return False
+Trace line 44: for #11: aax = 1910
+Trace line 45: d_nr = 4017
+Trace line 46: Call function er_skuddaar with params [1910]
+Trace line 32: return False
+Trace line 44: for #12: aax = 1911
+Trace line 45: d_nr = 4382
+Trace line 46: Call function er_skuddaar with params [1911]
+Trace line 32: return False
+Trace line 44: for #13: aax = 1912
+Trace line 45: d_nr = 4747
+Trace line 46: Call function er_skuddaar with params [1912]
+Trace line 32: return 12
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 4748
+Trace line 44: for #14: aax = 1913
+Trace line 45: d_nr = 5113
+Trace line 46: Call function er_skuddaar with params [1913]
+Trace line 32: return False
+Trace line 44: for #15: aax = 1914
+Trace line 45: d_nr = 5478
+Trace line 46: Call function er_skuddaar with params [1914]
+Trace line 32: return False
+Trace line 44: for #16: aax = 1915
+Trace line 45: d_nr = 5843
+Trace line 46: Call function er_skuddaar with params [1915]
+Trace line 32: return False
+Trace line 44: for #17: aax = 1916
+Trace line 45: d_nr = 6208
+Trace line 46: Call function er_skuddaar with params [1916]
+Trace line 32: return 16
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 6209
+Trace line 44: for #18: aax = 1917
+Trace line 45: d_nr = 6574
+Trace line 46: Call function er_skuddaar with params [1917]
+Trace line 32: return False
+Trace line 44: for #19: aax = 1918
+Trace line 45: d_nr = 6939
+Trace line 46: Call function er_skuddaar with params [1918]
+Trace line 32: return False
+Trace line 44: for #20: aax = 1919
+Trace line 45: d_nr = 7304
+Trace line 46: Call function er_skuddaar with params [1919]
+Trace line 32: return False
+Trace line 44: for #21: aax = 1920
+Trace line 45: d_nr = 7669
+Trace line 46: Call function er_skuddaar with params [1920]
+Trace line 32: return 20
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 7670
+Trace line 44: for #22: aax = 1921
+Trace line 45: d_nr = 8035
+Trace line 46: Call function er_skuddaar with params [1921]
+Trace line 32: return False
+Trace line 44: for #23: aax = 1922
+Trace line 45: d_nr = 8400
+Trace line 46: Call function er_skuddaar with params [1922]
+Trace line 32: return False
+Trace line 44: for #24: aax = 1923
+Trace line 45: d_nr = 8765
+Trace line 46: Call function er_skuddaar with params [1923]
+Trace line 32: return False
+Trace line 44: for #25: aax = 1924
+Trace line 45: d_nr = 9130
+Trace line 46: Call function er_skuddaar with params [1924]
+Trace line 32: return 24
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 9131
+Trace line 44: for #26: aax = 1925
+Trace line 45: d_nr = 9496
+Trace line 46: Call function er_skuddaar with params [1925]
+Trace line 32: return False
+Trace line 44: for #27: aax = 1926
+Trace line 45: d_nr = 9861
+Trace line 46: Call function er_skuddaar with params [1926]
+Trace line 32: return False
+Trace line 44: for #28: aax = 1927
+Trace line 45: d_nr = 10226
+Trace line 46: Call function er_skuddaar with params [1927]
+Trace line 32: return False
+Trace line 44: for #29: aax = 1928
+Trace line 45: d_nr = 10591
+Trace line 46: Call function er_skuddaar with params [1928]
+Trace line 32: return 28
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 10592
+Trace line 44: for #30: aax = 1929
+Trace line 45: d_nr = 10957
+Trace line 46: Call function er_skuddaar with params [1929]
+Trace line 32: return False
+Trace line 44: for #31: aax = 1930
+Trace line 45: d_nr = 11322
+Trace line 46: Call function er_skuddaar with params [1930]
+Trace line 32: return False
+Trace line 44: for #32: aax = 1931
+Trace line 45: d_nr = 11687
+Trace line 46: Call function er_skuddaar with params [1931]
+Trace line 32: return False
+Trace line 44: for #33: aax = 1932
+Trace line 45: d_nr = 12052
+Trace line 46: Call function er_skuddaar with params [1932]
+Trace line 32: return 32
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 12053
+Trace line 44: for #34: aax = 1933
+Trace line 45: d_nr = 12418
+Trace line 46: Call function er_skuddaar with params [1933]
+Trace line 32: return False
+Trace line 44: for #35: aax = 1934
+Trace line 45: d_nr = 12783
+Trace line 46: Call function er_skuddaar with params [1934]
+Trace line 32: return False
+Trace line 44: for #36: aax = 1935
+Trace line 45: d_nr = 13148
+Trace line 46: Call function er_skuddaar with params [1935]
+Trace line 32: return False
+Trace line 44: for #37: aax = 1936
+Trace line 45: d_nr = 13513
+Trace line 46: Call function er_skuddaar with params [1936]
+Trace line 32: return 36
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 13514
+Trace line 44: for #38: aax = 1937
+Trace line 45: d_nr = 13879
+Trace line 46: Call function er_skuddaar with params [1937]
+Trace line 32: return False
+Trace line 44: for #39: aax = 1938
+Trace line 45: d_nr = 14244
+Trace line 46: Call function er_skuddaar with params [1938]
+Trace line 32: return False
+Trace line 44: for #40: aax = 1939
+Trace line 45: d_nr = 14609
+Trace line 46: Call function er_skuddaar with params [1939]
+Trace line 32: return False
+Trace line 44: for #41: aax = 1940
+Trace line 45: d_nr = 14974
+Trace line 46: Call function er_skuddaar with params [1940]
+Trace line 32: return 40
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 14975
+Trace line 44: for #42: aax = 1941
+Trace line 45: d_nr = 15340
+Trace line 46: Call function er_skuddaar with params [1941]
+Trace line 32: return False
+Trace line 44: for #43: aax = 1942
+Trace line 45: d_nr = 15705
+Trace line 46: Call function er_skuddaar with params [1942]
+Trace line 32: return False
+Trace line 44: for #44: aax = 1943
+Trace line 45: d_nr = 16070
+Trace line 46: Call function er_skuddaar with params [1943]
+Trace line 32: return False
+Trace line 44: for #45: aax = 1944
+Trace line 45: d_nr = 16435
+Trace line 46: Call function er_skuddaar with params [1944]
+Trace line 32: return 44
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 16436
+Trace line 44: for #46: aax = 1945
+Trace line 45: d_nr = 16801
+Trace line 46: Call function er_skuddaar with params [1945]
+Trace line 32: return False
+Trace line 44: for #47: aax = 1946
+Trace line 45: d_nr = 17166
+Trace line 46: Call function er_skuddaar with params [1946]
+Trace line 32: return False
+Trace line 44: for #48: aax = 1947
+Trace line 45: d_nr = 17531
+Trace line 46: Call function er_skuddaar with params [1947]
+Trace line 32: return False
+Trace line 44: for #49: aax = 1948
+Trace line 45: d_nr = 17896
+Trace line 46: Call function er_skuddaar with params [1948]
+Trace line 32: return 48
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 17897
+Trace line 44: for #50: aax = 1949
+Trace line 45: d_nr = 18262
+Trace line 46: Call function er_skuddaar with params [1949]
+Trace line 32: return False
+Trace line 44: for #51: aax = 1950
+Trace line 45: d_nr = 18627
+Trace line 46: Call function er_skuddaar with params [1950]
+Trace line 32: return False
+Trace line 44: for #52: aax = 1951
+Trace line 45: d_nr = 18992
+Trace line 46: Call function er_skuddaar with params [1951]
+Trace line 32: return False
+Trace line 44: for #53: aax = 1952
+Trace line 45: d_nr = 19357
+Trace line 46: Call function er_skuddaar with params [1952]
+Trace line 32: return 52
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 19358
+Trace line 44: for #54: aax = 1953
+Trace line 45: d_nr = 19723
+Trace line 46: Call function er_skuddaar with params [1953]
+Trace line 32: return False
+Trace line 44: for #55: aax = 1954
+Trace line 45: d_nr = 20088
+Trace line 46: Call function er_skuddaar with params [1954]
+Trace line 32: return False
+Trace line 44: for #56: aax = 1955
+Trace line 45: d_nr = 20453
+Trace line 46: Call function er_skuddaar with params [1955]
+Trace line 32: return False
+Trace line 44: for #57: aax = 1956
+Trace line 45: d_nr = 20818
+Trace line 46: Call function er_skuddaar with params [1956]
+Trace line 32: return 56
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 20819
+Trace line 44: for #58: aax = 1957
+Trace line 45: d_nr = 21184
+Trace line 46: Call function er_skuddaar with params [1957]
+Trace line 32: return False
+Trace line 44: for #59: aax = 1958
+Trace line 45: d_nr = 21549
+Trace line 46: Call function er_skuddaar with params [1958]
+Trace line 32: return False
+Trace line 44: for #60: aax = 1959
+Trace line 45: d_nr = 21914
+Trace line 46: Call function er_skuddaar with params [1959]
+Trace line 32: return False
+Trace line 44: for #61: aax = 1960
+Trace line 45: d_nr = 22279
+Trace line 46: Call function er_skuddaar with params [1960]
+Trace line 32: return 60
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 22280
+Trace line 44: for #62: aax = 1961
+Trace line 45: d_nr = 22645
+Trace line 46: Call function er_skuddaar with params [1961]
+Trace line 32: return False
+Trace line 44: for #63: aax = 1962
+Trace line 45: d_nr = 23010
+Trace line 46: Call function er_skuddaar with params [1962]
+Trace line 32: return False
+Trace line 44: for #64: aax = 1963
+Trace line 45: d_nr = 23375
+Trace line 46: Call function er_skuddaar with params [1963]
+Trace line 32: return False
+Trace line 44: for #65: aax = 1964
+Trace line 45: d_nr = 23740
+Trace line 46: Call function er_skuddaar with params [1964]
+Trace line 32: return 64
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 23741
+Trace line 44: for #66: aax = 1965
+Trace line 45: d_nr = 24106
+Trace line 46: Call function er_skuddaar with params [1965]
+Trace line 32: return False
+Trace line 44: for #67: aax = 1966
+Trace line 45: d_nr = 24471
+Trace line 46: Call function er_skuddaar with params [1966]
+Trace line 32: return False
+Trace line 44: for #68: aax = 1967
+Trace line 45: d_nr = 24836
+Trace line 46: Call function er_skuddaar with params [1967]
+Trace line 32: return False
+Trace line 44: for #69: aax = 1968
+Trace line 45: d_nr = 25201
+Trace line 46: Call function er_skuddaar with params [1968]
+Trace line 32: return 68
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 25202
+Trace line 44: for #70: aax = 1969
+Trace line 45: d_nr = 25567
+Trace line 46: Call function er_skuddaar with params [1969]
+Trace line 32: return False
+Trace line 44: for #71: aax = 1970
+Trace line 45: d_nr = 25932
+Trace line 46: Call function er_skuddaar with params [1970]
+Trace line 32: return False
+Trace line 44: for #72: aax = 1971
+Trace line 45: d_nr = 26297
+Trace line 46: Call function er_skuddaar with params [1971]
+Trace line 32: return False
+Trace line 44: for #73: aax = 1972
+Trace line 45: d_nr = 26662
+Trace line 46: Call function er_skuddaar with params [1972]
+Trace line 32: return 72
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 26663
+Trace line 44: for #74: aax = 1973
+Trace line 45: d_nr = 27028
+Trace line 46: Call function er_skuddaar with params [1973]
+Trace line 32: return False
+Trace line 44: for #75: aax = 1974
+Trace line 45: d_nr = 27393
+Trace line 46: Call function er_skuddaar with params [1974]
+Trace line 32: return False
+Trace line 44: for #76: aax = 1975
+Trace line 45: d_nr = 27758
+Trace line 46: Call function er_skuddaar with params [1975]
+Trace line 32: return False
+Trace line 44: for #77: aax = 1976
+Trace line 45: d_nr = 28123
+Trace line 46: Call function er_skuddaar with params [1976]
+Trace line 32: return 76
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 28124
+Trace line 44: for #78: aax = 1977
+Trace line 45: d_nr = 28489
+Trace line 46: Call function er_skuddaar with params [1977]
+Trace line 32: return False
+Trace line 44: for #79: aax = 1978
+Trace line 45: d_nr = 28854
+Trace line 46: Call function er_skuddaar with params [1978]
+Trace line 32: return False
+Trace line 44: for #80: aax = 1979
+Trace line 45: d_nr = 29219
+Trace line 46: Call function er_skuddaar with params [1979]
+Trace line 32: return False
+Trace line 44: for #81: aax = 1980
+Trace line 45: d_nr = 29584
+Trace line 46: Call function er_skuddaar with params [1980]
+Trace line 32: return 80
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 29585
+Trace line 44: for #82: aax = 1981
+Trace line 45: d_nr = 29950
+Trace line 46: Call function er_skuddaar with params [1981]
+Trace line 32: return False
+Trace line 44: for #83: aax = 1982
+Trace line 45: d_nr = 30315
+Trace line 46: Call function er_skuddaar with params [1982]
+Trace line 32: return False
+Trace line 44: for #84: aax = 1983
+Trace line 45: d_nr = 30680
+Trace line 46: Call function er_skuddaar with params [1983]
+Trace line 32: return False
+Trace line 44: for #85: aax = 1984
+Trace line 45: d_nr = 31045
+Trace line 46: Call function er_skuddaar with params [1984]
+Trace line 32: return 84
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 31046
+Trace line 44: for #86: aax = 1985
+Trace line 45: d_nr = 31411
+Trace line 46: Call function er_skuddaar with params [1985]
+Trace line 32: return False
+Trace line 44: for #87: aax = 1986
+Trace line 45: d_nr = 31776
+Trace line 46: Call function er_skuddaar with params [1986]
+Trace line 32: return False
+Trace line 44: for #88: aax = 1987
+Trace line 45: d_nr = 32141
+Trace line 46: Call function er_skuddaar with params [1987]
+Trace line 32: return False
+Trace line 44: for #89: aax = 1988
+Trace line 45: d_nr = 32506
+Trace line 46: Call function er_skuddaar with params [1988]
+Trace line 32: return 88
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 32507
+Trace line 44: for #90: aax = 1989
+Trace line 45: d_nr = 32872
+Trace line 46: Call function er_skuddaar with params [1989]
+Trace line 32: return False
+Trace line 44: for #91: aax = 1990
+Trace line 45: d_nr = 33237
+Trace line 46: Call function er_skuddaar with params [1990]
+Trace line 32: return False
+Trace line 44: for #92: aax = 1991
+Trace line 45: d_nr = 33602
+Trace line 46: Call function er_skuddaar with params [1991]
+Trace line 32: return False
+Trace line 44: for #93: aax = 1992
+Trace line 45: d_nr = 33967
+Trace line 46: Call function er_skuddaar with params [1992]
+Trace line 32: return 92
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 33968
+Trace line 44: for #94: aax = 1993
+Trace line 45: d_nr = 34333
+Trace line 46: Call function er_skuddaar with params [1993]
+Trace line 32: return False
+Trace line 44: for #95: aax = 1994
+Trace line 45: d_nr = 34698
+Trace line 46: Call function er_skuddaar with params [1994]
+Trace line 32: return False
+Trace line 44: for #96: aax = 1995
+Trace line 45: d_nr = 35063
+Trace line 46: Call function er_skuddaar with params [1995]
+Trace line 32: return False
+Trace line 44: for #97: aax = 1996
+Trace line 45: d_nr = 35428
+Trace line 46: Call function er_skuddaar with params [1996]
+Trace line 32: return 96
+Trace line 46: if True alt #1: ...
+Trace line 46: d_nr = 35429
+Trace line 44: for #98: aax = 1997
+Trace line 45: d_nr = 35794
+Trace line 46: Call function er_skuddaar with params [1997]
+Trace line 32: return False
+Trace line 49: Call function range with params [1, 6]
+Trace line 49: for #1: mx = 1
+Trace line 50: Call function finn_m_leng with params [1, 1998]
+Trace line 37: return 31
+Trace line 50: d_nr = 35825
+Trace line 49: for #2: mx = 2
+Trace line 50: Call function finn_m_leng with params [2, 1998]
+Trace line 36: Call function er_skuddaar with params [1998]
+Trace line 32: return False
+Trace line 37: return 28
+Trace line 50: d_nr = 35853
+Trace line 49: for #3: mx = 3
+Trace line 50: Call function finn_m_leng with params [3, 1998]
+Trace line 37: return 31
+Trace line 50: d_nr = 35884
+Trace line 49: for #4: mx = 4
+Trace line 50: Call function finn_m_leng with params [4, 1998]
+Trace line 37: return 30
+Trace line 50: d_nr = 35914
+Trace line 49: for #5: mx = 5
+Trace line 50: Call function finn_m_leng with params [5, 1998]
+Trace line 37: return 31
+Trace line 50: d_nr = 35945
+Trace line 52: return 35968
+Trace line 58: u_dag = tirsdag
+Trace line 59: Call function str with params [23]
+Trace line 59: Call function print with params [23., juni, 1998, er en, tirsdag]
+Trace line 59: None
+E-o-f
