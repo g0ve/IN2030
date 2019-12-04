@@ -51,38 +51,17 @@ public class AspPrimary extends AspSyntax {
 		ArrayList<RuntimeValue> args;
 
 		for(int i = 0; i<apsLst.size(); i++){
-			//System.out.println(i);
 			if(apsLst.get(i) instanceof AspSubscription){
-				//System.out.println("heuu");
 				RuntimeValue v2 = apsLst.get(i).eval(curScope);
 				v = v.evalSubscription(v2, this);
-				// trace("[" + v.showInfo() + "]" + " = " + v2.showInfo());
 			}
 			else if(apsLst.get(i) instanceof AspArguments){
-				//System.out.println(apsLst.get(i));
 				args = apsLst.get(i).eval(curScope).getListValue("arguments", this);
 				trace("Call " + v + " with params " + args);
-				//System.out.println("åla");
 				v = v.evalFuncCall(args,this);
 			}
 		}
 		return v;
 	}
 
-
-
-	// 	RuntimeValue v = aa.eval(curScope);
-	// 	RuntimeValue apsV = null;
-	//
-	// 	for (AspPrimarySuffix aps : apsLst) {
-	// 		apsV = aps.eval(curScope);
-	//
-	// 		if(aps instanceof AspSubscription){
-	// 			v = v.evalSubscription(apsV, this);
-	// 			trace("Call " + v + " with prarams xxx");
-	// 		}
-	//
-	// 	}
-	// 	return v;
-	// }
 }

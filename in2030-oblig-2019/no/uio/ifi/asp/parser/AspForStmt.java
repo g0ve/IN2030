@@ -47,13 +47,7 @@ public class AspForStmt extends AspCompoundStmt{
   @Override
   public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
     RuntimeValue v = ae.eval(curScope);
-    /*
-    HVis den er en runtimelist - hent RuntimeListValuegå igjennom hvert element
-    assign name til hvert element i curscope og eval suite.
 
-    hvis den ikke er runtimelist: feilmelding
-    også returnerer dere runtimevalue som i alle evalene.
-    */
     if(v instanceof RuntimeListValue){
       ArrayList<RuntimeValue> aeLst = v.getListValue("for stmt", this);
       // System.out.println(aeLst);

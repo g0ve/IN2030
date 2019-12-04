@@ -38,8 +38,6 @@ public class AspSmallStmtList extends AspStmt{
 
   @Override
   public void prettyPrint(){
- 	// a; b; c;
-
     for (int i = 0; i < assLst.size(); i++) {
     	assLst.get(i).prettyPrint();
 		if(i == assLst.size()-1){
