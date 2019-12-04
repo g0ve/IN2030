@@ -76,14 +76,15 @@ public class RuntimeListValue extends RuntimeValue {
 
 	@Override
 	public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
-        int i;
+        int i = 0;
 
-        if (v instanceof RuntimeIntValue) {
-            i = (int)v.getIntValue("sub", where);
-            if(v instanceof RuntimeFloatValue){
+        if (v instanceof RuntimeIntValue || v instanceof RuntimeFloatValue) {
+            if (v instanceof RuntimeIntValue){
+                i = (int)v.getIntValue("sub", where);
+            }else if(v instanceof RuntimeFloatValue){
                 i = (int)v.getFloatValue("sub", where);
             }
-            
+
             if(i > lstValue.size()-1){
                 runtimeError("Type error for indeks "+typeName()+"!", where);
             }
