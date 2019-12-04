@@ -38,8 +38,14 @@ public class RuntimeFunc extends RuntimeValue {
     @Override
     public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
 
+			if(actualParams == null){
+				actualParams = new ArrayList<RuntimeValue>();
+			}
+			System.out.println(actualParams.size());
+
 		if(formalParam.size() != actualParams.size()){
 			runtimeError("Error in " + defId, where);
+
 		}
 
 		RuntimeScope newscope = new RuntimeScope(defScope);
