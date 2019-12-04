@@ -50,13 +50,13 @@ public class AspPrimary extends AspSyntax {
 		RuntimeValue v = aa.eval(curScope);
 		ArrayList<RuntimeValue> args;
 
-
 		for(int i = 0; i<apsLst.size(); i++){
 			//System.out.println(i);
 			if(apsLst.get(i) instanceof AspSubscription){
 				//System.out.println("heuu");
-
-				v = v.evalSubscription(apsLst.get(i).eval(curScope),this);
+				RuntimeValue v2 = apsLst.get(i).eval(curScope);
+				v = v.evalSubscription(v2, this);
+				// trace("[" + v.showInfo() + "]" + " = " + v2.showInfo());
 			}
 			else if(apsLst.get(i) instanceof AspArguments){
 				//System.out.println(apsLst.get(i));

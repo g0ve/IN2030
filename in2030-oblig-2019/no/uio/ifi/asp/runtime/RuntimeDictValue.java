@@ -66,10 +66,13 @@ public class RuntimeDictValue extends RuntimeValue {
 	@Override
 	public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
 		if (v instanceof RuntimeStringValue) {
-			if(dict.get(v.toString()) != null){
-				return dict.get(v.toString());
+            // System.out.println(dict);
+            String key = v.getStringValue("evalSubscription", where);
+            // System.out.println(key);
+			if(dict.get(key) != null){
+				return dict.get(key);
 			}
-			runtimeError("Key not found in dictionary.", where);
+			runtimeError("Key: " + key + " not found in dictionary.", where);
 		}
 
         runtimeError("Subscription '[...]' undefined for "+typeName()+"!", where);
