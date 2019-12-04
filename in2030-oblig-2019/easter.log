@@ -1,91 +1,91 @@
 Trace line 3: M_name = ['', '', '', '', '', '', '', '', '', '', '', '', '']
 Trace line 7: For #0: y = 2017
 Trace line 8: a = 3
-Trace line 9: b = 20.0
+Trace line 9: b = 20
 Trace line 10: c = 17
-Trace line 11: d = 5.0
-Trace line 12: e = 0.0
-Trace line 13: f = 1.12
-Trace line 14: g = 6.626666666666666
-Trace line 15: h = 20.373333333333335
-Trace line 16: i = 4.0
+Trace line 11: d = 5
+Trace line 12: e = 0
+Trace line 13: f = 1
+Trace line 14: g = 6
+Trace line 15: h = 21
+Trace line 16: i = 4
 Trace line 17: k = 1
-Trace line 18: l = 4.626666666666665
-Trace line 19: m = 0.7292535107169253
-Trace line 21: month = 4.319200820160694
-Trace line 22: day = 10.895225424981533
-Trace line 23: Call function str with params [10.895225424981533]
-Trace line 23: Call function print with params ['10.895225424981533. april', 2017]
+Trace line 18: l = 4
+Trace line 19: m = 0
+Trace line 21: month = 4
+Trace line 22: day = 16
+Trace line 23: Call function str with params [16]
+Trace line 23: Call function print with params ['16. april', 2017]
 Trace line 23: None
 Trace line 7: For #1: y = 2018
 Trace line 8: a = 4
-Trace line 9: b = 20.0
+Trace line 9: b = 20
 Trace line 10: c = 18
-Trace line 11: d = 5.0
-Trace line 12: e = 0.0
-Trace line 13: f = 1.12
-Trace line 14: g = 6.626666666666666
-Trace line 15: h = 9.373333333333335
-Trace line 16: i = 4.0
+Trace line 11: d = 5
+Trace line 12: e = 0
+Trace line 13: f = 1
+Trace line 14: g = 6
+Trace line 15: h = 10
+Trace line 16: i = 4
 Trace line 17: k = 2
-Trace line 18: l = 0.6266666666666652
-Trace line 19: m = 0.26805617147080557
-Trace line 21: month = 3.9394711870872374
-Trace line 22: day = 30.123606799704362
-Trace line 23: Call function str with params [30.123606799704362]
-Trace line 23: Call function print with params ['30.123606799704362. mars', 2018]
+Trace line 18: l = 0
+Trace line 19: m = 0
+Trace line 21: month = 4
+Trace line 22: day = 1
+Trace line 23: Call function str with params [1]
+Trace line 23: Call function print with params ['1. april', 2018]
 Trace line 23: None
 Trace line 7: For #2: y = 2019
 Trace line 8: a = 5
-Trace line 9: b = 20.0
+Trace line 9: b = 20
 Trace line 10: c = 19
-Trace line 11: d = 5.0
-Trace line 12: e = 0.0
-Trace line 13: f = 1.12
-Trace line 14: g = 6.626666666666666
-Trace line 15: h = 28.373333333333335
-Trace line 16: i = 4.0
+Trace line 11: d = 5
+Trace line 12: e = 0
+Trace line 13: f = 1
+Trace line 14: g = 6
+Trace line 15: h = 29
+Trace line 16: i = 4
 Trace line 17: k = 3
-Trace line 18: l = 1.6266666666666652
-Trace line 19: m = 0.7824685883222469
-Trace line 21: month = 4.468474834894977
-Trace line 22: day = 15.52271988174428
-Trace line 23: Call function str with params [15.52271988174428]
-Trace line 23: Call function print with params ['15.52271988174428. april', 2019]
+Trace line 18: l = 1
+Trace line 19: m = 0
+Trace line 21: month = 4
+Trace line 22: day = 21
+Trace line 23: Call function str with params [21]
+Trace line 23: Call function print with params ['21. april', 2019]
 Trace line 23: None
 Trace line 7: For #3: y = 2020
 Trace line 8: a = 6
-Trace line 9: b = 20.0
+Trace line 9: b = 20
 Trace line 10: c = 20
-Trace line 11: d = 5.0
-Trace line 12: e = 0.0
-Trace line 13: f = 1.12
-Trace line 14: g = 6.626666666666666
-Trace line 15: h = 17.373333333333335
-Trace line 16: i = 5.0
+Trace line 11: d = 5
+Trace line 12: e = 0
+Trace line 13: f = 1
+Trace line 14: g = 6
+Trace line 15: h = 18
+Trace line 16: i = 5
 Trace line 17: k = 0
-Trace line 18: l = 3.626666666666665
-Trace line 19: m = 0.6139541759053954
-Trace line 21: month = 4.2162038957632975
-Trace line 22: day = 7.702320768662219
-Trace line 23: Call function str with params [7.702320768662219]
-Trace line 23: Call function print with params ['7.702320768662219. april', 2020]
+Trace line 18: l = 3
+Trace line 19: m = 0
+Trace line 21: month = 4
+Trace line 22: day = 12
+Trace line 23: Call function str with params [12]
+Trace line 23: Call function print with params ['12. april', 2020]
 Trace line 23: None
 Trace line 7: For #4: y = 2021
 Trace line 8: a = 7
-Trace line 9: b = 20.0
+Trace line 9: b = 20
 Trace line 10: c = 21
-Trace line 11: d = 5.0
-Trace line 12: e = 0.0
-Trace line 13: f = 1.12
-Trace line 14: g = 6.626666666666666
-Trace line 15: h = 6.373333333333335
-Trace line 16: i = 5.0
+Trace line 11: d = 5
+Trace line 12: e = 0
+Trace line 13: f = 1
+Trace line 14: g = 6
+Trace line 15: h = 7
+Trace line 16: i = 5
 Trace line 17: k = 1
-Trace line 18: l = 6.626666666666665
-Trace line 19: m = 0.494220251293422
-Trace line 21: month = 3.9851760722885823
-Trace line 22: day = 31.54045824094605
-Trace line 23: Call function str with params [31.54045824094605]
-Trace line 23: Call function print with params ['31.54045824094605. mars', 2021]
+Trace line 18: l = 6
+Trace line 19: m = 0
+Trace line 21: month = 4
+Trace line 22: day = 4
+Trace line 23: Call function str with params [4]
+Trace line 23: Call function print with params ['4. april', 2021]
 Trace line 23: None

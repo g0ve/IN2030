@@ -176,7 +176,7 @@ public class RuntimeIntValue extends RuntimeValue{
   @Override
   public RuntimeValue evalIntDivide(RuntimeValue v, AspSyntax where) {
     if (v instanceof RuntimeIntValue) {
-      return new RuntimeFloatValue(Math.floor(intValue / v.getIntValue("//", where)));
+      return new RuntimeIntValue(Math.floorDiv(intValue, v.getIntValue("//", where)));
 
     }
     else if(v instanceof RuntimeFloatValue){
