@@ -12,7 +12,7 @@ public class AspAssignment extends AspSmallStmt{
     super(n);
   }
 
-  AspName name;
+  AspName an;
   AspExpr expr;
   ArrayList<AspSubscription> asLst = new ArrayList<>();
 
@@ -24,7 +24,7 @@ public class AspAssignment extends AspSmallStmt{
       parserError("No name to assignment", s.curLineNum());
     }
 
-    aas.name = AspName.parse(s);
+    aas.an = AspName.parse(s);
 
     while(s.curToken().kind == leftBracketToken){
 	  aas.asLst.add(AspSubscription.parse(s));
@@ -42,7 +42,7 @@ public class AspAssignment extends AspSmallStmt{
 
   @Override
   public void prettyPrint(){
-    name.prettyPrint();
+    an.prettyPrint();
     for (AspSubscription as : asLst) {
     	as.prettyPrint();
     }
@@ -60,7 +60,7 @@ public class AspAssignment extends AspSmallStmt{
   //   RuntimeValue navn = null;
   //
   //   if(!asLst.isEmpty()){
-  //     navn = name.eval(curScope);
+  //     navn = an.eval(curScope);
   //     for (int i = 0; i < asLst.size() - 1; i++){
   //       navn = navn.evalSubscription(asLst.get(i).eval(curScope), this);
   //     }
@@ -69,28 +69,33 @@ public class AspAssignment extends AspSmallStmt{
   //     return v;
   //   }
   //   else{
-  //     curScope.assign(name.token.name, v);
+  //     curScope.assign(an.token.an, v);
   //     return v;
   //   }
   // }
 
 
 
-    RuntimeValue rv = expr.eval(curScope);
-    RuntimeValue rvName = null;
+    RuntimeValue exprValue = expr.eval(curScope);
 
     if(asLst.size() > 0){
-      rvName = name.eval(curScope);
-      for(int i = 0; i < asLst.size() -1; i++){
-        rvName = rvName.evalSubscription(asLst.get(i).eval(curScope), this);
+        RuntimeValue v = an.eval(curScope);
+      int lenght = asLst.size();
+
+      for (int i = 0; i < lenght-1; i++) {
+          RuntimeValue v2 = asLst.get(i).eval(curScope);
+          v = v.evalSubscription(v2, this);
       }
-      RuntimeValue lastIndex = asLst.get(asLst.size() -1).eval(curScope);
-      rvName.evalAssignElem(lastIndex, rv, this);
-      return rv;
+
+      AspSubscription lastSub = asLst.get(lenght-1);
+      RuntimeValue lastIndex = lastSub.eval(curScope);
+      v.evalAssignElem(lastIndex, exprValue, this);
+
     }
     else{
-      curScope.assign(name.token.name, rv);
-      trace(name.token.name + " = " + rv.showInfo());
+        String id = an.getTokenName();
+        curScope.assign(id, exprValue);
+        trace(id + " = " + exprValue.toString());
     }
     return null;
   }
