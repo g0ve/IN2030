@@ -1,7 +1,0 @@
-FucDef - ferdig
-AspReturn - Done
-AspCompOpr - ?
-AspExprStmt - done
-AspFactorOpr - ?
-AspProgram - done
-RuntimeLibrary - gjøres (input - print: acctualParams.get(0)?) må gjøre range
