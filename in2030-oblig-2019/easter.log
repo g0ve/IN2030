@@ -1,7 +1,7 @@
-Trace line 3: M_name = ['', '', '', '', '', '', '', '', '', '', '', '', '']
-Trace line 4: M_name[3] = 'mars'
-Trace line 5: M_name[4] = 'april'
-Trace line 7: For #0: y = 2017
+Trace line 3: M_name = [, , , , , , , , , , , , ]
+Trace line 4: M_name[3] = mars
+Trace line 5: M_name[4] = april
+Trace line 7: for #1: y = 2017
 Trace line 8: a = 3
 Trace line 9: b = 20
 Trace line 10: c = 17
@@ -17,9 +17,9 @@ Trace line 19: m = 0
 Trace line 21: month = 4
 Trace line 22: day = 16
 Trace line 23: Call function str with params [16]
-Trace line 23: Call function print with params ['16. april', 2017]
+Trace line 23: Call function print with params [16. april, 2017]
 Trace line 23: None
-Trace line 7: For #1: y = 2018
+Trace line 7: for #2: y = 2018
 Trace line 8: a = 4
 Trace line 9: b = 20
 Trace line 10: c = 18
@@ -35,9 +35,9 @@ Trace line 19: m = 0
 Trace line 21: month = 4
 Trace line 22: day = 1
 Trace line 23: Call function str with params [1]
-Trace line 23: Call function print with params ['1. april', 2018]
+Trace line 23: Call function print with params [1. april, 2018]
 Trace line 23: None
-Trace line 7: For #2: y = 2019
+Trace line 7: for #3: y = 2019
 Trace line 8: a = 5
 Trace line 9: b = 20
 Trace line 10: c = 19
@@ -53,9 +53,9 @@ Trace line 19: m = 0
 Trace line 21: month = 4
 Trace line 22: day = 21
 Trace line 23: Call function str with params [21]
-Trace line 23: Call function print with params ['21. april', 2019]
+Trace line 23: Call function print with params [21. april, 2019]
 Trace line 23: None
-Trace line 7: For #3: y = 2020
+Trace line 7: for #4: y = 2020
 Trace line 8: a = 6
 Trace line 9: b = 20
 Trace line 10: c = 20
@@ -71,9 +71,9 @@ Trace line 19: m = 0
 Trace line 21: month = 4
 Trace line 22: day = 12
 Trace line 23: Call function str with params [12]
-Trace line 23: Call function print with params ['12. april', 2020]
+Trace line 23: Call function print with params [12. april, 2020]
 Trace line 23: None
-Trace line 7: For #4: y = 2021
+Trace line 7: for #5: y = 2021
 Trace line 8: a = 7
 Trace line 9: b = 20
 Trace line 10: c = 21
@@ -89,5 +89,5 @@ Trace line 19: m = 0
 Trace line 21: month = 4
 Trace line 22: day = 4
 Trace line 23: Call function str with params [4]
-Trace line 23: Call function print with params ['4. april', 2021]
+Trace line 23: Call function print with params [4. april, 2021]
 Trace line 23: None

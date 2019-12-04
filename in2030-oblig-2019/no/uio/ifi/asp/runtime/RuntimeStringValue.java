@@ -32,9 +32,9 @@ public class RuntimeStringValue extends RuntimeValue {
 
 	@Override
 	public String toString() {
-		return "\'" + strValue + "\'";
+		return strValue;
 	}
-	
+
 	@Override
     public String getStringValue(String what, AspSyntax where) {
     	return strValue;

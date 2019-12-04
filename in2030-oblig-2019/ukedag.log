@@ -1,58 +1,58 @@
-Trace line 4: ukedag = ['man', 'tirs', 'ons', 'tors', 'fre', 'lÃ¸r', 'sÃ¸n']
+Trace line 4: ukedag = [man, tirs, ons, tors, fre, lÃ¸r, sÃ¸n]
 Trace line 5: m_leng = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 Trace line 7: m_navn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Trace line 8: m_navn[1] = 'januar'
-Trace line 8: m_navn[2] = 'februar'
-Trace line 8: m_navn[3] = 'mars'
-Trace line 9: m_navn[4] = 'april'
-Trace line 9: m_navn[5] = 'mai'
-Trace line 9: m_navn[6] = 'juni'
-Trace line 10: m_navn[7] = 'juli'
-Trace line 10: m_navn[8] = 'august'
-Trace line 10: m_navn[9] = 'september'
-Trace line 11: m_navn[10] = 'oktober'
-Trace line 11: m_navn[11] = 'november'
-Trace line 11: m_navn[12] = 'desember'
+Trace line 8: m_navn[1] = januar
+Trace line 8: m_navn[2] = februar
+Trace line 8: m_navn[3] = mars
+Trace line 9: m_navn[4] = april
+Trace line 9: m_navn[5] = mai
+Trace line 9: m_navn[6] = juni
+Trace line 10: m_navn[7] = juli
+Trace line 10: m_navn[8] = august
+Trace line 10: m_navn[9] = september
+Trace line 11: m_navn[10] = oktober
+Trace line 11: m_navn[11] = november
+Trace line 11: m_navn[12] = desember
 Trace line 13: m_num = {}
 Trace line 14: Call function range with params [1, 13]
 Trace line 14: for #1: m = 1
-Trace line 14: m_num['januar'] = 1
+Trace line 14: m_num[januar] = 1
 Trace line 14: for #2: m = 2
-Trace line 14: m_num['februar'] = 2
+Trace line 14: m_num[februar] = 2
 Trace line 14: for #3: m = 3
-Trace line 14: m_num['mars'] = 3
+Trace line 14: m_num[mars] = 3
 Trace line 14: for #4: m = 4
-Trace line 14: m_num['april'] = 4
+Trace line 14: m_num[april] = 4
 Trace line 14: for #5: m = 5
-Trace line 14: m_num['mai'] = 5
+Trace line 14: m_num[mai] = 5
 Trace line 14: for #6: m = 6
-Trace line 14: m_num['juni'] = 6
+Trace line 14: m_num[juni] = 6
 Trace line 14: for #7: m = 7
-Trace line 14: m_num['juli'] = 7
+Trace line 14: m_num[juli] = 7
 Trace line 14: for #8: m = 8
-Trace line 14: m_num['august'] = 8
+Trace line 14: m_num[august] = 8
 Trace line 14: for #9: m = 9
-Trace line 14: m_num['september'] = 9
+Trace line 14: m_num[september] = 9
 Trace line 14: for #10: m = 10
-Trace line 14: m_num['oktober'] = 10
+Trace line 14: m_num[oktober] = 10
 Trace line 14: for #11: m = 11
-Trace line 14: m_num['november'] = 11
+Trace line 14: m_num[november] = 11
 Trace line 14: for #12: m = 12
-Trace line 14: m_num['desember'] = 12
+Trace line 14: m_num[desember] = 12
 Trace line 18: def finn_maaned
 Trace line 24: def les_maaned
 Trace line 31: def er_skuddaar
 Trace line 35: def finn_m_leng
 Trace line 40: def finn_dag_nr
-Trace line 55: Call function input with params ['Oppgi et Ã¥r: ']
-Trace line 55: Call function int with params ['1997']
-Trace line 55: aar = 1997
+Trace line 55: Call function input with params [Oppgi et Ã¥r: ]
+Trace line 55: Call function int with params [1998]
+Trace line 55: aar = 1998
 Trace line 56: Call function les_maaned with params null
 Trace line 25: while True: ...
-Trace line 26: Call function input with params ['Oppgi en mÃ¥ned: ']
-Trace line 26: m_id = 'juni'
-Trace line 27: Call function finn_maaned with params ['juni']
-Trace line 19: Call function len with params [[0, 'januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember']]
+Trace line 26: Call function input with params [Oppgi en mÃ¥ned: ]
+Trace line 26: m_id = juni
+Trace line 27: Call function finn_maaned with params [juni]
+Trace line 19: Call function len with params [[0, januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]]
 Trace line 19: Call function range with params [1, 13]
 Trace line 19: for #1: m_ix = 1
 Trace line 19: for #2: m_ix = 2
@@ -65,12 +65,12 @@ Trace line 20: return 6
 Trace line 27: if True alt #1: ...
 Trace line 27: return 6
 Trace line 56: maaned = 6
-Trace line 57: Call function input with params ['Oppgi en dag: ']
-Trace line 57: Call function int with params ['23']
+Trace line 57: Call function input with params [Oppgi en dag: ]
+Trace line 57: Call function int with params [23]
 Trace line 57: dag = 23
-Trace line 58: Call function finn_dag_nr with params [1997, 6, 23]
+Trace line 58: Call function finn_dag_nr with params [1998, 6, 23]
 Trace line 41: d_nr = 0
-Trace line 44: Call function range with params [1900, 1997]
+Trace line 44: Call function range with params [1900, 1998]
 Trace line 44: for #1: aax = 1900
 Trace line 45: d_nr = 365
 Trace line 46: Call function er_skuddaar with params [1900]
@@ -507,31 +507,35 @@ Trace line 46: Call function er_skuddaar with params [1996]
 Trace line 32: return 96
 Trace line 46: if True alt #1: ...
 Trace line 46: d_nr = 35429
+Trace line 44: for #98: aax = 1997
+Trace line 45: d_nr = 35794
+Trace line 46: Call function er_skuddaar with params [1997]
+Trace line 32: return False
 Trace line 49: Call function range with params [1, 6]
 Trace line 49: for #1: mx = 1
-Trace line 50: Call function finn_m_leng with params [1, 1997]
+Trace line 50: Call function finn_m_leng with params [1, 1998]
 Trace line 37: return 31
-Trace line 50: d_nr = 35460
+Trace line 50: d_nr = 35825
 Trace line 49: for #2: mx = 2
-Trace line 50: Call function finn_m_leng with params [2, 1997]
-Trace line 36: Call function er_skuddaar with params [1997]
+Trace line 50: Call function finn_m_leng with params [2, 1998]
+Trace line 36: Call function er_skuddaar with params [1998]
 Trace line 32: return False
 Trace line 37: return 28
-Trace line 50: d_nr = 35488
+Trace line 50: d_nr = 35853
 Trace line 49: for #3: mx = 3
-Trace line 50: Call function finn_m_leng with params [3, 1997]
+Trace line 50: Call function finn_m_leng with params [3, 1998]
 Trace line 37: return 31
-Trace line 50: d_nr = 35519
+Trace line 50: d_nr = 35884
 Trace line 49: for #4: mx = 4
-Trace line 50: Call function finn_m_leng with params [4, 1997]
+Trace line 50: Call function finn_m_leng with params [4, 1998]
 Trace line 37: return 30
-Trace line 50: d_nr = 35549
+Trace line 50: d_nr = 35914
 Trace line 49: for #5: mx = 5
-Trace line 50: Call function finn_m_leng with params [5, 1997]
+Trace line 50: Call function finn_m_leng with params [5, 1998]
 Trace line 37: return 31
-Trace line 50: d_nr = 35580
-Trace line 52: return 35603
-Trace line 58: u_dag = 'mandag'
+Trace line 50: d_nr = 35945
+Trace line 52: return 35968
+Trace line 58: u_dag = tirsdag
 Trace line 59: Call function str with params [23]
-Trace line 59: Call function print with params ['23.', 'juni', 1997, 'er en', 'mandag']
+Trace line 59: Call function print with params [23., juni, 1998, er en, tirsdag]
 Trace line 59: None
